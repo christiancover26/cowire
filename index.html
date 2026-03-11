@@ -413,6 +413,106 @@
         .insight-box h4 { color: var(--accent-hover); font-size: 1rem; margin-bottom: 0.5rem; }
         .insight-box p { font-size: 0.9rem; color: var(--text-main); }
 
+        /* Form Fields */
+        .field-group {
+            margin-bottom: 1.25rem;
+        }
+        .field-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-bottom: 0.4rem;
+        }
+        .field-group .field-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .field-input, .field-textarea, .field-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .field-input:focus, .field-textarea:focus, .field-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+            background: rgba(99,102,241,0.04);
+        }
+        .field-input::placeholder, .field-textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+        .field-textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .field-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+        .field-select option {
+            background: var(--bg-card);
+            color: var(--text-main);
+        }
+        .field-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        @media (max-width: 768px) {
+            .field-row { grid-template-columns: 1fr; }
+        }
+        .field-section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-hover);
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-accent);
+        }
+        .btn-save {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .btn-save:active { transform: translateY(0); }
+        .save-status {
+            display: inline-block;
+            margin-left: 1rem;
+            font-size: 0.85rem;
+            color: var(--success);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .save-status.show { opacity: 1; }
+
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-body); }
@@ -1361,7 +1461,7 @@
                     <ul class="styled-list">
                         <li>100% de proyectos nuevos entran a la nueva entidad</li>
                         <li>Salarios base reales para los 4 socios</li>
-                        <li>Reinversion obligatoria: X% de utilidades trimestrales</li>
+                        <li>Reinversion obligatoria: <input type="text" class="field-input" id="f_reinversion_inline" placeholder="%" style="display:inline; width:120px; padding:4px 8px; font-size:0.85rem;"> de utilidades trimestrales</li>
                         <li>Profit sharing trimestral del remanente (25/25/25/25)</li>
                         <li>Fondo de emergencia permanente</li>
                     </ul>
@@ -1375,10 +1475,10 @@
                     <tbody>
                         <tr><td><strong>Ingresos</strong></td><td>100% de facturacion de proyectos nuevos entra a The Tech Firm</td><td>Por proyecto</td></tr>
                         <tr><td><strong>Costos de delivery</strong></td><td>Freelancers, herramientas, hosting, APIs &mdash; se pagan primero</td><td>Por proyecto</td></tr>
-                        <tr><td><strong>Salarios base</strong></td><td>Cada socio recibe salario fijo mensual (monto por definir)</td><td>Mensual</td></tr>
-                        <tr><td><strong>Reinversion</strong></td><td>X% de utilidades netas para crecimiento y fondo de emergencia</td><td>Trimestral</td></tr>
+                        <tr><td><strong>Salarios base</strong></td><td>Cada socio recibe salario fijo mensual: <input type="text" class="field-input" id="f_salario_tabla" placeholder="Monto por definir" style="display:inline; width:180px; padding:4px 8px; font-size:0.85rem; margin-top:4px;"></td><td>Mensual</td></tr>
+                        <tr><td><strong>Reinversion</strong></td><td><input type="text" class="field-input" id="f_reinversion_tabla" placeholder="X%" style="display:inline; width:80px; padding:4px 8px; font-size:0.85rem;"> de utilidades netas para crecimiento y fondo de emergencia</td><td>Trimestral</td></tr>
                         <tr><td><strong>Profit sharing</strong></td><td>Remanente despues de costos + salarios + reinversion: 25/25/25/25</td><td>Trimestral</td></tr>
-                        <tr><td><strong>Fondo de emergencia</strong></td><td>Reserva para imprevistos. Minimo saludable por definir</td><td>Continuo</td></tr>
+                        <tr><td><strong>Fondo de emergencia</strong></td><td>Reserva para imprevistos. Minimo: <input type="text" class="field-input" id="f_fondo_tabla" placeholder="Por definir" style="display:inline; width:180px; padding:4px 8px; font-size:0.85rem; margin-top:4px;"></td><td>Continuo</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1732,43 +1832,180 @@
                 <div class="step-number">14</div>
                 <h2>Pendientes por Definir (Junta de Socios)</h2>
             </div>
-            <p>Estos puntos los tenemos que definir entre los 4 antes de avanzar:</p>
+            <p>Estos puntos los tenemos que definir entre los 4 antes de avanzar. Llenen los campos y guarden los acuerdos.</p>
 
-            <div class="grid-2" style="margin-top: 1.5rem;">
-                <div>
-                    <div class="sub-title">Financieros</div>
-                    <ul class="styled-list">
-                        <li>Transfer Pricing (Fase 1): 70/30? 65/35? Cuanto se queda cada quien</li>
-                        <li>Cuanto de salario base mensual para cada socio (Fase 2)</li>
-                        <li>Cuanto se reinvierte cada trimestre (X%)</li>
-                        <li>Cuanto se guarda minimo como fondo de emergencia</li>
-                        <li>Hasta cuanto puede gastar un socio sin preguntarle a los demas</li>
-                        <li>Meta de facturacion para el primer trimestre del piloto</li>
-                    </ul>
+            <!-- FINANCIEROS -->
+            <div class="field-section-title">Financieros</div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label>Transfer Pricing (Fase 1)</label>
+                    <div class="field-hint">Cuanto se queda cada lado por tipo de proyecto (ej: 70/30, 65/35)</div>
+                    <input type="text" class="field-input" id="f_transfer_pricing" placeholder="Ej: Enthropy 70% / Cowire 30% en consultoria...">
                 </div>
-                <div>
-                    <div class="sub-title">Operativos y Legales</div>
-                    <ul class="styled-list">
-                        <li>Nombre legal de la entidad (The Tech Firm o variante)</li>
-                        <li>Tipo de sociedad (SAPI, SA de CV, etc.)</li>
-                        <li>Clausula de salida: que pasa si alguien se quiere salir?</li>
-                        <li>Non-compete: los socios pueden tener proyectos por su cuenta?</li>
-                        <li>Como se resuelven conflictos si no nos ponemos de acuerdo</li>
-                        <li>Vesting: el equity se gana poco a poco o es directo?</li>
-                        <li>Diego y Andrea: que roles van a tener en la nueva estructura?</li>
-                        <li>Oficina: se usa la de Cowire? Se comparte? Se busca otra?</li>
-                    </ul>
+                <div class="field-group">
+                    <label>Salario base mensual por socio (Fase 2)</label>
+                    <div class="field-hint">Monto fijo mensual para cada socio</div>
+                    <input type="text" class="field-input" id="f_salario_base" placeholder="Ej: $25,000 MXN/mes por socio">
                 </div>
             </div>
 
-            <div class="sub-title">Estrategicos</div>
-            <ul class="styled-list">
-                <li>Quien es la cara de la marca? (propuesta: Marcelo) &mdash; todos tienen que estar de acuerdo y comprometidos a empujarlo</li>
-                <li>Proyectos de gobierno: les entramos activamente o los dejamos como oportunidad si llegan?</li>
-                <li>Division de educacion: arranca desde el piloto o se espera a Fase 2?</li>
-                <li>Contenido: Marcelo full-time en contenido o tambien hace delivery?</li>
-                <li>Que onda con los clientes actuales de cada agencia si se fusionan en Fase 2?</li>
-            </ul>
+            <div class="field-row">
+                <div class="field-group">
+                    <label>Porcentaje de reinversion trimestral</label>
+                    <div class="field-hint">Que % de utilidades se reinvierte cada trimestre</div>
+                    <input type="text" class="field-input" id="f_reinversion" placeholder="Ej: 15% de utilidades netas">
+                </div>
+                <div class="field-group">
+                    <label>Fondo de emergencia minimo</label>
+                    <div class="field-hint">Cuanto se guarda como colchon antes de repartir</div>
+                    <input type="text" class="field-input" id="f_fondo_emergencia" placeholder="Ej: 3 meses de costos fijos (~$200k MXN)">
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label>Limite de gasto sin aprobacion</label>
+                    <div class="field-hint">Hasta cuanto puede gastar un socio sin preguntarle a los demas</div>
+                    <input type="text" class="field-input" id="f_limite_gasto" placeholder="Ej: $50,000 MXN">
+                </div>
+                <div class="field-group">
+                    <label>Meta de facturacion del primer trimestre</label>
+                    <div class="field-hint">Objetivo de revenue conjunto en los primeros 90 dias</div>
+                    <input type="text" class="field-input" id="f_meta_facturacion" placeholder="Ej: $300,000 MXN">
+                </div>
+            </div>
+
+            <!-- OPERATIVOS Y LEGALES -->
+            <div class="field-section-title">Operativos y Legales</div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label>Nombre legal de la entidad</label>
+                    <div class="field-hint">The Tech Firm u otra variante</div>
+                    <input type="text" class="field-input" id="f_nombre_legal" placeholder="Ej: The Tech Firm S.A.P.I. de C.V.">
+                </div>
+                <div class="field-group">
+                    <label>Tipo de sociedad</label>
+                    <select class="field-select" id="f_tipo_sociedad">
+                        <option value="">Seleccionar...</option>
+                        <option value="sapi">SAPI de CV</option>
+                        <option value="sa">SA de CV</option>
+                        <option value="srl">SRL</option>
+                        <option value="sas">SAS</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label>Clausula de salida</label>
+                <div class="field-hint">Que pasa si alguien se quiere salir? Condiciones, tiempos, proceso</div>
+                <textarea class="field-textarea" id="f_clausula_salida" placeholder="Ej: Notificacion 6 meses antes, ROFO a los socios, vesting proporcional..."></textarea>
+            </div>
+
+            <div class="field-group">
+                <label>Non-compete</label>
+                <div class="field-hint">Los socios pueden tener proyectos por su cuenta? Bajo que condiciones?</div>
+                <textarea class="field-textarea" id="f_non_compete" placeholder="Ej: No se permite otra agencia de tech. Side projects permitidos si no compiten y se declaran..."></textarea>
+            </div>
+
+            <div class="field-group">
+                <label>Resolucion de conflictos</label>
+                <div class="field-hint">Como se resuelven los desacuerdos que no se solucionan en junta</div>
+                <textarea class="field-textarea" id="f_conflictos" placeholder="Ej: Mediacion externa obligatoria antes de accion legal. Mediador pre-identificado..."></textarea>
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label>Vesting del equity</label>
+                    <div class="field-hint">Se gana poco a poco o es directo?</div>
+                    <select class="field-select" id="f_vesting">
+                        <option value="">Seleccionar...</option>
+                        <option value="24_6">24 meses con cliff de 6 meses</option>
+                        <option value="36_6">36 meses con cliff de 6 meses</option>
+                        <option value="24_12">24 meses con cliff de 12 meses</option>
+                        <option value="directo">Equity directo (sin vesting)</option>
+                        <option value="otro">Otro esquema</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label>Oficina</label>
+                    <select class="field-select" id="f_oficina">
+                        <option value="">Seleccionar...</option>
+                        <option value="cowire">Usar la de Cowire</option>
+                        <option value="compartida">Compartir entre ambas</option>
+                        <option value="nueva">Buscar nueva oficina</option>
+                        <option value="remoto">100% remoto</option>
+                        <option value="hibrido">Hibrido (remoto + oficina)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label>Roles de Diego y Andrea en la nueva estructura</label>
+                <div class="field-hint">Que funciones especificas van a cubrir en The Tech Firm</div>
+                <textarea class="field-textarea" id="f_roles_equipo" placeholder="Ej: Diego → delivery tecnico con IA. Andrea → soporte operativo y comunicacion con clientes..."></textarea>
+            </div>
+
+            <!-- ESTRATEGICOS -->
+            <div class="field-section-title">Estrategicos</div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label>Cara de la marca</label>
+                    <div class="field-hint">Quien es la persona publica de The Tech Firm?</div>
+                    <input type="text" class="field-input" id="f_cara_marca" placeholder="Ej: Marcelo (propuesta inicial)">
+                </div>
+                <div class="field-group">
+                    <label>Proyectos de gobierno</label>
+                    <select class="field-select" id="f_gobierno">
+                        <option value="">Seleccionar...</option>
+                        <option value="activo">Les entramos activamente</option>
+                        <option value="oportunidad">Solo si llegan como oportunidad</option>
+                        <option value="fase2">Lo evaluamos en Fase 2</option>
+                        <option value="no">No por ahora</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field-group">
+                    <label>Division de educacion</label>
+                    <select class="field-select" id="f_educacion">
+                        <option value="">Seleccionar...</option>
+                        <option value="piloto">Arranca desde el piloto</option>
+                        <option value="fase2">Se espera a Fase 2</option>
+                        <option value="evaluar">Se evalua al final del piloto</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label>Rol de Marcelo en delivery</label>
+                    <select class="field-select" id="f_marcelo_delivery">
+                        <option value="">Seleccionar...</option>
+                        <option value="contenido">100% contenido y marketing</option>
+                        <option value="hibrido">Contenido + delivery parcial</option>
+                        <option value="evaluar">Se evalua segun carga</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label>Clientes actuales de cada agencia en Fase 2</label>
+                <div class="field-hint">Que pasa con los clientes que ya tiene cada agencia si se fusionan</div>
+                <textarea class="field-textarea" id="f_clientes_actuales" placeholder="Ej: Todos migran a The Tech Firm / Se mantienen separados hasta que terminen / Revenue compartido desde dia 1..."></textarea>
+            </div>
+
+            <div class="field-group">
+                <label>Notas adicionales / Acuerdos extra</label>
+                <textarea class="field-textarea" id="f_notas_extra" placeholder="Cualquier otro punto que quieran dejar por escrito..."></textarea>
+            </div>
+
+            <button class="btn-save" onclick="guardarAcuerdos()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                Guardar acuerdos localmente
+            </button>
+            <span class="save-status" id="saveStatus14">Guardado correctamente</span>
         </div>
 
         <!-- ============================================ -->
@@ -2019,7 +2256,7 @@
                     <thead><tr><th>Que</th><th>De Quien Es</th><th>Si un Socio Sale</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Codigo, templates, frameworks creados en la firma</strong></td><td>De The Tech Firm</td><td>No se lleva nada</td></tr>
-                        <tr><td><strong>IP pre-fusion</strong> (frameworks de Enthropy, templates de Cowire)</td><td>Se licencia o transfiere a la firma (definir)</td><td>Depende del acuerdo de transferencia</td></tr>
+                        <tr><td><strong>IP pre-fusion</strong> (frameworks de Enthropy, templates de Cowire)</td><td><input type="text" class="field-input" id="f_ip_prefusion" placeholder="Se licencia o transfiere? Definir..." style="display:inline; width:100%; padding:4px 8px; font-size:0.85rem; margin-top:4px;"></td><td>Depende del acuerdo de transferencia</td></tr>
                         <tr><td><strong>Codigo de clientes</strong></td><td>Del cliente (a menos que el contrato diga otra cosa)</td><td>N/A</td></tr>
                         <tr><td><strong>Patrones, aprendizajes, componentes genericos</strong></td><td>De The Tech Firm</td><td>No se lleva nada</td></tr>
                         <tr><td><strong>Metodologias y SOPs</strong></td><td>De The Tech Firm</td><td>No se lleva nada</td></tr>
@@ -2138,5 +2375,55 @@
 
     </div>
 
+    <script>
+        // IDs de todos los campos
+        const fieldIds = [
+            'f_transfer_pricing', 'f_salario_base', 'f_reinversion', 'f_fondo_emergencia',
+            'f_limite_gasto', 'f_meta_facturacion', 'f_nombre_legal', 'f_tipo_sociedad',
+            'f_clausula_salida', 'f_non_compete', 'f_conflictos', 'f_vesting', 'f_oficina',
+            'f_roles_equipo', 'f_cara_marca', 'f_gobierno', 'f_educacion', 'f_marcelo_delivery',
+            'f_clientes_actuales', 'f_notas_extra',
+            'f_reinversion_inline', 'f_salario_tabla', 'f_reinversion_tabla', 'f_fondo_tabla',
+            'f_ip_prefusion'
+        ];
+
+        // Cargar datos guardados al abrir
+        window.addEventListener('DOMContentLoaded', function() {
+            const saved = JSON.parse(localStorage.getItem('ttf_acuerdos') || '{}');
+            fieldIds.forEach(function(id) {
+                const el = document.getElementById(id);
+                if (el && saved[id]) {
+                    el.value = saved[id];
+                }
+            });
+        });
+
+        // Guardar todos los campos
+        function guardarAcuerdos() {
+            const data = {};
+            fieldIds.forEach(function(id) {
+                const el = document.getElementById(id);
+                if (el) data[id] = el.value;
+            });
+            localStorage.setItem('ttf_acuerdos', JSON.stringify(data));
+            const status = document.getElementById('saveStatus14');
+            status.classList.add('show');
+            setTimeout(function() { status.classList.remove('show'); }, 2500);
+        }
+
+        // Auto-guardar cada 30 segundos
+        setInterval(function() {
+            const data = {};
+            let hasData = false;
+            fieldIds.forEach(function(id) {
+                const el = document.getElementById(id);
+                if (el) {
+                    data[id] = el.value;
+                    if (el.value) hasData = true;
+                }
+            });
+            if (hasData) localStorage.setItem('ttf_acuerdos', JSON.stringify(data));
+        }, 30000);
+    </script>
 </body>
 </html>
