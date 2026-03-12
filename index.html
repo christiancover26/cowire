@@ -578,16 +578,67 @@
 
             <div class="decision-card">
                 <div class="decision-label">Decision 4.2</div>
-                <h4>Vesting (el equity se gana con el tiempo?)</h4>
-                <div class="context">Si una de las dos empresas/socios se sale al mes 3, se lleva todo su equity? O se gana poco a poco?</div>
-                <div class="decision-options">
-                    <label class="decision-option"><input type="radio" name="d4_2" value="vesting_24"> <span><strong>Vesting 24 meses</strong> con cliff de 6 meses (no ganas nada los primeros 6 meses, despues se acumula mensual)</span></label>
-                    <label class="decision-option"><input type="radio" name="d4_2" value="vesting_36"> <span><strong>Vesting 36 meses</strong> con cliff de 6 meses</span></label>
-                    <label class="decision-option"><input type="radio" name="d4_2" value="directo"> <span><strong>Equity directo:</strong> Desde el dia 1 cada quien tiene su %</span></label>
-                    <label class="decision-option"><input type="radio" name="d4_2" value="otro_vesting"> <span><strong>Otro esquema</strong></span></label>
+                <h4>Vesting: Como se gana el equity</h4>
+                <div class="context">El vesting es un mecanismo para proteger a todas las partes. El equity <strong>no se entrega de golpe</strong> &mdash; se va ganando con el tiempo conforme cada parte demuestra compromiso y aporta valor. Si alguien se sale antes de tiempo, solo se lleva lo que ya se gano.</div>
+
+                <div class="callout callout-info" style="margin-top:1rem;">
+                    <div class="callout-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </div>
+                    <div class="callout-content">
+                        <h4>Como funciona el vesting</h4>
+                        <p><strong>Cliff:</strong> Periodo inicial donde no se gana nada. Si te sales antes del cliff, te vas con 0% de equity. Protege contra salidas prematuras.<br><br>
+                        <strong>Acumulacion:</strong> Despues del cliff, el equity se va ganando mes a mes de forma proporcional hasta completar el 100% del equity asignado.<br><br>
+                        <strong>Ejemplo con vesting de 36 meses y cliff de 12:</strong><br>
+                        &bull; Mes 1-12: 0% (cliff, no se ha ganado nada)<br>
+                        &bull; Mes 12: Se libera el primer bloque (~33% del equity asignado)<br>
+                        &bull; Mes 13-36: Se acumula mensualmente (~2.8% del equity asignado por mes)<br>
+                        &bull; Mes 36: 100% del equity asignado esta ganado</p>
+                    </div>
                 </div>
+
+                <div class="field-section-title">Definir los terminos del vesting</div>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label>Duracion total del vesting</label>
+                        <div class="decision-options">
+                            <label class="decision-option"><input type="radio" name="d4_2_duracion" value="24"> <span><strong>24 meses</strong></span></label>
+                            <label class="decision-option"><input type="radio" name="d4_2_duracion" value="36"> <span><strong>36 meses</strong></span></label>
+                            <label class="decision-option"><input type="radio" name="d4_2_duracion" value="48"> <span><strong>48 meses</strong></span></label>
+                            <label class="decision-option"><input type="radio" name="d4_2_duracion" value="otro_dur"> <span><strong>Otra duracion</strong></span></label>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label>Duracion del cliff</label>
+                        <div class="decision-options">
+                            <label class="decision-option"><input type="radio" name="d4_2_cliff" value="6"> <span><strong>6 meses</strong></span></label>
+                            <label class="decision-option"><input type="radio" name="d4_2_cliff" value="12"> <span><strong>12 meses</strong></span></label>
+                            <label class="decision-option"><input type="radio" name="d4_2_cliff" value="0"> <span><strong>Sin cliff</strong> (se empieza a acumular desde el dia 1)</span></label>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="field-group">
-                    <textarea class="field-textarea" id="d4_2_notas" placeholder="Notas sobre el vesting..."></textarea>
+                    <label>Que pasa si alguien se sale antes de completar el vesting?</label>
+                    <div class="decision-options">
+                        <label class="decision-option"><input type="radio" name="d4_2_salida" value="pierde"> <span><strong>Pierde lo no ganado:</strong> Solo se queda con el % acumulado hasta ese momento. El resto regresa a los que se quedan</span></label>
+                        <label class="decision-option"><input type="radio" name="d4_2_salida" value="recompra"> <span><strong>Recompra obligatoria:</strong> Los que se quedan tienen que comprar el % acumulado a precio valuado</span></label>
+                        <label class="decision-option"><input type="radio" name="d4_2_salida" value="hibrido_v"> <span><strong>Hibrido:</strong> Si se sale voluntariamente pierde lo no ganado. Si lo sacan sin causa, se le paga lo acumulado</span></label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Aceleracion del vesting</label>
+                    <div class="context">En caso de venta de la empresa o evento de liquidez, se acelera el vesting?</div>
+                    <div class="decision-options">
+                        <label class="decision-option"><input type="radio" name="d4_2_aceleracion" value="total"> <span><strong>Aceleracion total:</strong> Si se vende la empresa, todo el equity se libera automaticamente</span></label>
+                        <label class="decision-option"><input type="radio" name="d4_2_aceleracion" value="parcial"> <span><strong>Aceleracion parcial:</strong> Se libera un % adicional pero no todo</span></label>
+                        <label class="decision-option"><input type="radio" name="d4_2_aceleracion" value="sin"> <span><strong>Sin aceleracion:</strong> El vesting sigue igual sin importar que pase</span></label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d4_2_notas" placeholder="Notas adicionales sobre el vesting, condiciones especiales, excepciones..."></textarea>
                 </div>
             </div>
 
@@ -1060,11 +1111,227 @@
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 11: SIGUIENTES PASOS -->
+        <!-- SECCION 11: GOBIERNO CORPORATIVO -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">11</div>
+                <h2>Decision: Gobierno Corporativo</h2>
+            </div>
+            <p>Las reglas de como se toman las decisiones, quien tiene autoridad sobre que, y como se resuelven los conflictos. Esto es lo que mantiene una sociedad sana a largo plazo.</p>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 11.1</div>
+                <h4>Niveles de decision y autoridad</h4>
+                <div class="context">No todas las decisiones requieren junta de socios. Definir rangos claros para que cada quien pueda operar con autonomia en lo suyo.</div>
+
+                <div class="field-group">
+                    <label>Decisiones operativas (dia a dia)</label>
+                    <div class="context">Asignar tareas, elegir herramientas, responder a clientes, compras menores.</div>
+                    <div class="decision-options">
+                        <label class="decision-option"><input type="radio" name="d11_1_ops" value="lider"> <span><strong>Autonomia del lider de area:</strong> Cada C-level decide en su dominio sin consultar</span></label>
+                        <label class="decision-option"><input type="radio" name="d11_1_ops" value="notifica"> <span><strong>Decide y notifica:</strong> Toma la decision pero avisa a los demas</span></label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Gastos: limites de aprobacion</label>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label>Gasto sin aprobacion (1 socio)</label>
+                            <input type="text" class="field-input" id="d11_1_gasto_solo" placeholder="Ej: Hasta $50,000 MXN">
+                        </div>
+                        <div class="field-group">
+                            <label>Gasto con 2 socios</label>
+                            <input type="text" class="field-input" id="d11_1_gasto_dos" placeholder="Ej: $50,000 - $200,000 MXN">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label>Gasto que requiere aprobacion de todos</label>
+                        <input type="text" class="field-input" id="d11_1_gasto_todos" placeholder="Ej: Mayor a $200,000 MXN">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Contrataciones y despidos</label>
+                    <div class="decision-options">
+                        <label class="decision-option"><input type="radio" name="d11_1_rrhh" value="lider_mas_1"> <span><strong>Lider de area + 1 socio:</strong> El C-level del area propone, otro socio aprueba</span></label>
+                        <label class="decision-option"><input type="radio" name="d11_1_rrhh" value="mayoria"> <span><strong>Mayoria:</strong> 3 de 4 socios aprueban</span></label>
+                        <label class="decision-option"><input type="radio" name="d11_1_rrhh" value="unanimidad"> <span><strong>Unanimidad:</strong> Los 4 de acuerdo</span></label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Decisiones estrategicas (nuevos servicios, cambio de direccion, inversiones grandes)</label>
+                    <div class="decision-options">
+                        <label class="decision-option"><input type="radio" name="d11_1_estrategica" value="unanimidad"> <span><strong>Unanimidad:</strong> Los 4 socios de acuerdo</span></label>
+                        <label class="decision-option"><input type="radio" name="d11_1_estrategica" value="mayoria_3"> <span><strong>Supermayoria:</strong> 3 de 4 socios</span></label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Cambios de equity, agregar/quitar socios, vender la empresa</label>
+                    <div class="decision-options">
+                        <label class="decision-option"><input type="radio" name="d11_1_equity" value="unanimidad"> <span><strong>Unanimidad obligatoria</strong> + asesoria legal externa</span></label>
+                        <label class="decision-option"><input type="radio" name="d11_1_equity" value="supermayoria"> <span><strong>Supermayoria (3 de 4)</strong> + asesoria legal</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 11.2</div>
+                <h4>Mecanismo de desempate</h4>
+                <div class="context">Con 4 socios, los empates 2v2 van a pasar. Necesitamos un proceso claro para resolverlos <strong>antes</strong> de que sucedan.</div>
+
+                <div class="callout callout-alert" style="margin-top:1rem;">
+                    <div class="callout-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="callout-content">
+                        <h4>Proceso sugerido para empates</h4>
+                        <p><strong>Paso 1:</strong> Discusion abierta en junta<br>
+                        <strong>Paso 2:</strong> Cooling off de 72 horas &mdash; cada lado prepara su argumento por escrito (1 pagina)<br>
+                        <strong>Paso 3:</strong> Re-voto<br>
+                        <strong>Paso 4:</strong> Si sigue empatado &rarr; el socio cuya area es mas relevante toma la decision final ("domain authority")<br>
+                        <strong>Paso 5:</strong> Si cruza areas &rarr; mediador externo</p>
+                    </div>
+                </div>
+
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d11_2" value="proceso_sugerido"> <span><strong>Aceptar el proceso sugerido arriba</strong></span></label>
+                    <label class="decision-option"><input type="radio" name="d11_2" value="voto_calidad"> <span><strong>Voto de calidad:</strong> Un socio designado (CEO?) tiene voto doble en caso de empate</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_2" value="rotativo"> <span><strong>Rotativo:</strong> El voto decisivo rota cada trimestre entre los socios</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_2" value="advisor"> <span><strong>Advisor externo:</strong> Un tercero de confianza rompe empates</span></label>
+                </div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d11_2_notas" placeholder="Modificaciones al proceso o mecanismo alternativo..."></textarea>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 11.3</div>
+                <h4>Reuniones obligatorias</h4>
+                <div class="context">La comunicacion es lo que sostiene una sociedad. Definir las juntas minimas que no se pueden saltar.</div>
+
+                <div class="field-group">
+                    <label>Junta de socios</label>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label>Frecuencia</label>
+                            <div class="decision-options">
+                                <label class="decision-option"><input type="radio" name="d11_3_junta" value="semanal"> <span>Semanal</span></label>
+                                <label class="decision-option"><input type="radio" name="d11_3_junta" value="quincenal"> <span>Quincenal</span></label>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label>Duracion y agenda</label>
+                            <input type="text" class="field-input" id="d11_3_junta_dur" placeholder="Ej: 60 min - KPIs, pipeline, decisiones, blockers">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Revision financiera</label>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <div class="decision-options">
+                                <label class="decision-option"><input type="radio" name="d11_3_finanzas" value="mensual"> <span>Mensual</span></label>
+                                <label class="decision-option"><input type="radio" name="d11_3_finanzas" value="trimestral"> <span>Trimestral</span></label>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <input type="text" class="field-input" id="d11_3_finanzas_det" placeholder="Ej: Revenue, costos, cash flow, proyecciones">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Revision estrategica / OKRs</label>
+                    <div class="decision-options">
+                        <label class="decision-option"><input type="radio" name="d11_3_estrategia" value="trimestral"> <span>Trimestral</span></label>
+                        <label class="decision-option"><input type="radio" name="d11_3_estrategia" value="semestral"> <span>Semestral</span></label>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Evaluacion de socios</label>
+                    <div class="context">Cada socio se autoevalua y los demas lo evaluan. Para ajustar roles y responsabilidades si algo no esta funcionando.</div>
+                    <div class="decision-options">
+                        <label class="decision-option"><input type="radio" name="d11_3_eval" value="trimestral"> <span>Trimestral</span></label>
+                        <label class="decision-option"><input type="radio" name="d11_3_eval" value="semestral"> <span>Semestral</span></label>
+                        <label class="decision-option"><input type="radio" name="d11_3_eval" value="anual"> <span>Anual</span></label>
+                    </div>
+                </div>
+
+                <div class="callout callout-purple" style="margin-top:1rem;">
+                    <div class="callout-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div class="callout-content">
+                        <h4>Regla de oro</h4>
+                        <p>Toda reunion tiene <strong>agenda previa (24h antes)</strong> y <strong>acta con action items, responsables y deadlines</strong>. Si no tiene agenda, no se hace. Si no tiene acta, no sirvio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 11.4</div>
+                <h4>Transparencia financiera</h4>
+                <div class="context">Todos los socios deben tener visibilidad sobre el dinero. Sin transparencia no hay confianza.</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d11_4" value="total"> <span><strong>Acceso total:</strong> Todos los socios ven estados financieros, cuentas bancarias y movimientos en tiempo real</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_4" value="reportes"> <span><strong>Reportes periodicos:</strong> El COO/CFO comparte reportes mensuales con todos</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_4" value="auditor"> <span><strong>Auditor externo:</strong> Un contador independiente revisa y reporta a todos</span></label>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 11.5</div>
+                <h4>Protocolo si un socio no cumple</h4>
+                <div class="context">Que pasa si un socio consistentemente no cumple con su parte. Esto hay que definirlo antes de que pase.</div>
+
+                <div class="callout callout-alert" style="margin-top:1rem;">
+                    <div class="callout-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div class="callout-content">
+                        <h4>Proceso sugerido</h4>
+                        <p><strong>Trimestre 1 bajo:</strong> Conversacion privada + plan de mejora documentado<br>
+                        <strong>Trimestre 2 bajo:</strong> Junta formal con los 4. Se redefinen responsabilidades o se reasignan<br>
+                        <strong>Trimestre 3 bajo:</strong> Se activa clausula de dilucion o buyout forzado segun el acuerdo de socios</p>
+                    </div>
+                </div>
+
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d11_5" value="sugerido"> <span><strong>Aceptar el proceso sugerido</strong></span></label>
+                    <label class="decision-option"><input type="radio" name="d11_5" value="otro_protocolo"> <span><strong>Otro proceso</strong></span></label>
+                </div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d11_5_notas" placeholder="Modificaciones, KPIs por socio, condiciones especiales..."></textarea>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 11.6</div>
+                <h4>Resolucion de conflictos entre socios</h4>
+                <div class="context">Cuando hay un problema personal o de vision entre socios, cual es el proceso antes de que escale.</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d11_6" value="privado_junta_mediador"> <span><strong>Escalamiento gradual:</strong> 1) Conversacion privada &rarr; 2) Junta de socios &rarr; 3) Mediador externo. Mediacion obligatoria antes de cualquier accion legal</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_6" value="mediador_directo"> <span><strong>Mediador directo:</strong> Si no se resuelve en privado, va directo a mediacion externa</span></label>
+                </div>
+                <div class="field-group">
+                    <label>Mediador o asesor externo pre-identificado</label>
+                    <input type="text" class="field-input" id="d11_6_mediador" placeholder="Nombre o perfil del mediador (mejor tenerlo antes de necesitarlo)">
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SECCION 12: SIGUIENTES PASOS -->
+        <!-- ============================================ -->
+        <div class="card">
+            <div class="card-header">
+                <div class="step-number">12</div>
                 <h2>Siguientes Pasos</h2>
             </div>
             <p>Una vez que las decisiones de arriba esten claras, estos son los pasos para arrancar.</p>
