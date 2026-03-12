@@ -1120,10 +1120,55 @@
             </div>
             <p>Las reglas de como se toman las decisiones, quien tiene autoridad sobre que, y como se resuelven los conflictos. Esto es lo que mantiene una sociedad sana a largo plazo.</p>
 
+            <div class="callout callout-alert" style="margin-bottom: 2rem;">
+                <div class="callout-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <div class="callout-content">
+                    <h4>Problema critico: Enthropy son 3, Cowire es 1</h4>
+                    <p>Si las decisiones se toman por voto individual (4 socios, 1 voto cada uno), Enthropy siempre podria ganar 3-1. Eso no es una sociedad justa &mdash; es una mayoria permanente. <strong>Necesitamos un mecanismo que proteja a ambos lados y que Alejandro nunca pueda ser bloqueado simplemente por ser uno contra tres.</strong></p>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 11.0</div>
+                <h4>Modelo de votacion: como evitar el bloqueo 3 vs 1</h4>
+                <div class="context">Este es probablemente el punto mas importante del gobierno corporativo. Hay que elegir un modelo que sea justo para ambos lados.</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d11_0" value="por_empresa"> <span><strong>Voto por empresa (no por persona):</strong> Enthropy = 1 voto, Cowire = 1 voto. No importa cuantas personas tiene cada lado. Si no hay acuerdo entre las dos empresas, se activa el mecanismo de desempate. Internamente, cada empresa decide como quiera como votar (Enthropy entre sus 3 socios, Cowire decide solo)</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_0" value="veto"> <span><strong>Voto individual + derecho de veto:</strong> Cada socio tiene 1 voto, pero Alejandro tiene poder de veto en decisiones que afecten directamente a Cowire o su equipo. El veto no se puede usar en todo &mdash; solo en temas definidos (equity, costos, despidos, cambios estrategicos)</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_0" value="unanimidad_critico"> <span><strong>Mayoria para operativo, unanimidad para critico:</strong> Decisiones del dia a dia por mayoria simple (3 de 4). Pero decisiones criticas (equity, salidas, gastos mayores, cambios de estructura) requieren unanimidad &mdash; si Alejandro no esta de acuerdo, no pasa</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_0" value="ponderado"> <span><strong>Voto ponderado:</strong> Los votos pesan segun el equity. Si es 50/50 entre empresas, Enthropy tiene 50% del voto (repartido entre 3) y Cowire 50% (Alejandro). Ninguna decision pasa sin al menos una parte de cada lado</span></label>
+                    <label class="decision-option"><input type="radio" name="d11_0" value="hibrido_modelo"> <span><strong>Hibrido:</strong> Combinar modelos segun el tipo de decision (definir abajo)</span></label>
+                </div>
+
+                <div class="callout callout-success" style="margin-top:1rem;">
+                    <div class="callout-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="callout-content">
+                        <h4>Decisiones que siempre requieren acuerdo de ambos lados</h4>
+                        <p>Sin importar el modelo que se elija, estas decisiones <strong>nunca</strong> deberian pasar sin que las dos empresas esten de acuerdo:<br><br>
+                        &bull; Cambios de equity o estructura de la sociedad<br>
+                        &bull; Agregar o quitar socios<br>
+                        &bull; Venta de la empresa<br>
+                        &bull; Gastos mayores a un monto definido<br>
+                        &bull; Cambios en el modelo de profit share<br>
+                        &bull; Contrataciones o despidos del equipo de la otra empresa<br>
+                        &bull; Decisiones que afecten directamente los clientes o ingresos de la otra empresa</p>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label>Notas y condiciones del modelo elegido</label>
+                    <textarea class="field-textarea" id="d11_0_notas" placeholder="Detalles adicionales, excepciones, situaciones especiales..." style="min-height:100px;"></textarea>
+                </div>
+            </div>
+
             <div class="decision-card">
                 <div class="decision-label">Decision 11.1</div>
                 <h4>Niveles de decision y autoridad</h4>
-                <div class="context">No todas las decisiones requieren junta de socios. Definir rangos claros para que cada quien pueda operar con autonomia en lo suyo.</div>
+                <div class="context">Una vez definido el modelo de votacion, aqui se definen los rangos de autoridad para operar en el dia a dia.</div>
 
                 <div class="field-group">
                     <label>Decisiones operativas (dia a dia)</label>
@@ -1181,7 +1226,7 @@
             <div class="decision-card">
                 <div class="decision-label">Decision 11.2</div>
                 <h4>Mecanismo de desempate</h4>
-                <div class="context">Con 4 socios, los empates 2v2 van a pasar. Necesitamos un proceso claro para resolverlos <strong>antes</strong> de que sucedan.</div>
+                <div class="context">Si se elige voto por empresa (1 Enthropy, 1 Cowire), los empates van a ser frecuentes. Si se elige voto individual, el riesgo es el bloqueo 3v1. En cualquier caso, necesitamos un proceso claro para cuando no hay acuerdo.</div>
 
                 <div class="callout callout-alert" style="margin-top:1rem;">
                     <div class="callout-icon">
