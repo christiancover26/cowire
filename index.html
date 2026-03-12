@@ -169,53 +169,6 @@
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 
-        /* Role Cards */
-        .role-box {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .role-box::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; }
-        .role-ceo::before { background: linear-gradient(90deg, #6366f1, #818cf8); }
-        .role-cmo::before { background: linear-gradient(90deg, #34d399, #6ee7b7); }
-        .role-cto::before { background: linear-gradient(90deg, #f472b6, #fb7185); }
-        .role-coo::before { background: linear-gradient(90deg, #fbbf24, #fcd34d); }
-        .role-box:hover { transform: translateY(-5px); background: rgba(255,255,255,0.04); box-shadow: var(--shadow-md); border-color: var(--border-accent); }
-
-        .icon-wrapper {
-            width: 56px; height: 56px; border-radius: 16px;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1.25rem auto;
-        }
-        .role-ceo .icon-wrapper { background: rgba(99,102,241,0.12); color: #818cf8; }
-        .role-cmo .icon-wrapper { background: rgba(52,211,153,0.12); color: #34d399; }
-        .role-cto .icon-wrapper { background: rgba(244,114,182,0.12); color: #f472b6; }
-        .role-coo .icon-wrapper { background: rgba(251,191,36,0.12); color: #fbbf24; }
-
-        .role-box h4 { color: var(--primary); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; }
-        .role-title {
-            font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.5px; margin-bottom: 1rem; display: block;
-        }
-        .role-ceo .role-title { color: #818cf8; }
-        .role-cmo .role-title { color: #34d399; }
-        .role-cto .role-title { color: #f472b6; }
-        .role-coo .role-title { color: #fbbf24; }
-        .role-box p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
-        .role-box ul { text-align: left; list-style: none; padding: 0; margin-top: 0.75rem; }
-        .role-box ul li {
-            font-size: 0.85rem; color: var(--text-muted); padding: 0.3rem 0 0.3rem 1.25rem;
-            position: relative;
-        }
-        .role-box ul li::before {
-            content: '\2192'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem;
-        }
-
         /* Callouts */
         .callout {
             border-radius: var(--radius-md);
@@ -245,50 +198,6 @@
             content: '\2192'; position: absolute; left: 0; color: var(--accent-hover); font-weight: bold;
         }
 
-        /* Tables */
-        .table-container {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            margin-top: 1.5rem;
-        }
-        table { width: 100%; border-collapse: collapse; background: var(--bg-card); }
-        th, td { padding: 1rem 1.5rem; text-align: left; }
-        th {
-            background-color: rgba(255,255,255,0.03); color: var(--primary); font-weight: 600;
-            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;
-            border-bottom: 1px solid var(--border);
-        }
-        td { border-bottom: 1px solid var(--border); font-size: 0.95rem; color: var(--text-main); }
-        tr:last-child td { border-bottom: none; }
-        tbody tr:hover { background-color: rgba(99,102,241,0.03); }
-
-        /* Agency Comparison */
-        .agency-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .agency-card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-        }
-        .agency-enthropy::before { background: linear-gradient(90deg, #6366f1, #a78bfa); }
-        .agency-alex::before { background: linear-gradient(90deg, #34d399, #6ee7b7); }
-        .agency-card h3 { color: var(--primary); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .agency-card .agency-subtitle {
-            font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;
-            padding-bottom: 1rem; border-bottom: 1px solid var(--border);
-        }
-        .agency-section { margin-bottom: 1.5rem; }
-        .agency-section h4 {
-            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;
-            color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 600;
-        }
-        .agency-section p, .agency-section li { font-size: 0.9rem; color: var(--text-main); }
-
         /* Metric Cards */
         .metric-card {
             background: rgba(255,255,255,0.02);
@@ -309,45 +218,23 @@
             font-size: 0.85rem; color: var(--text-muted); font-weight: 500;
         }
 
-        /* Process Flow */
-        .process-flow {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-        }
-        .process-step {
-            background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
-            color: white;
-            padding: 0.75rem 1.25rem;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-align: center;
-            flex: 1;
-            min-width: 120px;
-        }
-        .process-arrow { color: var(--accent-hover); font-size: 1.2rem; font-weight: 700; flex-shrink: 0; }
-        .process-step.step-green { background: linear-gradient(135deg, #059669, #34d399); }
-        .process-step.step-purple { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
-        .process-step.step-warning { background: linear-gradient(135deg, #d97706, #fbbf24); color: #0c0c14; }
-
-        /* Service Cards */
-        .service-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid var(--border);
+        /* Insight box */
+        .insight-box {
+            background: rgba(99,102,241,0.04);
+            border: 1px solid var(--border-accent);
             border-radius: var(--radius-md);
             padding: 1.5rem;
-            transition: all 0.4s;
+            margin: 1rem 0;
         }
-        .service-card:hover { background: rgba(99,102,241,0.04); box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--border-accent); }
-        .service-card .service-icon { font-size: 2rem; margin-bottom: 0.75rem; }
-        .service-card h4 { color: var(--primary); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
-        .service-card .service-price {
-            margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border);
-            font-size: 0.85rem; font-weight: 600; color: var(--accent-hover);
+        .insight-box h4 { color: var(--accent-hover); font-size: 1rem; margin-bottom: 0.5rem; }
+        .insight-box p { font-size: 0.9rem; color: var(--text-main); }
+
+        /* Sub-section title */
+        .sub-title {
+            font-size: 1.15rem; font-weight: 700; color: var(--primary);
+            margin: 2rem 0 1rem 0; padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
         }
 
         /* Badge */
@@ -365,53 +252,59 @@
         .badge-orange { background: rgba(251,191,36,0.12); color: #fbbf24; }
         .badge-red { background: rgba(248,113,113,0.12); color: #f87171; }
 
-        /* Sub-section title */
-        .sub-title {
-            font-size: 1.15rem; font-weight: 700; color: var(--primary);
-            margin: 2rem 0 1rem 0; padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-        }
-
-        /* Tool stack */
-        .tool-tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(99,102,241,0.06);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin: 4px;
-            color: var(--text-main);
-            transition: all 0.2s;
-        }
-        .tool-tag:hover { border-color: var(--border-accent); background: rgba(99,102,241,0.1); }
-
-        /* Audit cards */
-        .audit-item {
+        /* Decision Card */
+        .decision-card {
             background: rgba(255,255,255,0.02);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 1.5rem;
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+        .decision-card:hover { border-color: var(--border-accent); }
+        .decision-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-hover);
+            margin-bottom: 0.5rem;
+        }
+        .decision-card h4 {
+            color: var(--primary);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .decision-card .context {
+            font-size: 0.88rem;
+            color: var(--text-muted);
             margin-bottom: 1rem;
-            transition: all 0.3s;
+            line-height: 1.5;
         }
-        .audit-item:hover { border-color: var(--border-accent); }
-        .audit-item h4 { color: var(--primary); font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .audit-item .finding { font-size: 0.9rem; color: var(--text-main); margin-bottom: 0.75rem; }
-        .audit-item .recommendation { font-size: 0.85rem; color: var(--accent-hover); font-weight: 500; }
-
-        /* Insight box */
-        .insight-box {
-            background: rgba(99,102,241,0.04);
-            border: 1px solid var(--border-accent);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            margin: 1rem 0;
+        .decision-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
-        .insight-box h4 { color: var(--accent-hover); font-size: 1rem; margin-bottom: 0.5rem; }
-        .insight-box p { font-size: 0.9rem; color: var(--text-main); }
+        .decision-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0.75rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.88rem;
+        }
+        .decision-option:hover { border-color: var(--border-accent); background: rgba(99,102,241,0.04); }
+        .decision-option input[type="radio"] {
+            accent-color: var(--accent);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
 
         /* Form Fields */
         .field-group {
@@ -451,28 +344,13 @@
             opacity: 0.6;
         }
         .field-textarea {
-            min-height: 80px;
+            min-height: 70px;
             resize: vertical;
-        }
-        .field-select {
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            padding-right: 2.5rem;
-        }
-        .field-select option {
-            background: var(--bg-card);
-            color: var(--text-main);
         }
         .field-row {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-        }
-        @media (max-width: 768px) {
-            .field-row { grid-template-columns: 1fr; }
         }
         .field-section-title {
             font-size: 1rem;
@@ -518,8 +396,6 @@
         ::-webkit-scrollbar-track { background: var(--bg-body); }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
-
-        /* Selection */
         ::selection { background: rgba(99,102,241,0.3); color: white; }
 
         @media (max-width: 992px) {
@@ -530,20 +406,18 @@
             header { padding: 4rem 1.5rem 6rem 1.5rem; }
             header h1 { font-size: 2.2rem; }
             .grid-2, .grid-4 { grid-template-columns: 1fr; }
+            .field-row { grid-template-columns: 1fr; }
             .container { margin-top: -4rem; }
             .card { padding: 1.5rem; }
-            th, td { padding: 1rem; }
-            .process-flow { flex-direction: column; }
-            .process-arrow { transform: rotate(90deg); }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <span class="badge-top">Confidencial &bull; Plan Operativo de Fusion</span>
-        <h1>The Tech Firm: Plan Maestro de Integracion</h1>
-        <p>Aqui esta todo: como operamos hoy, que nos falta, como nos complementamos, y el plan paso a paso para armar la firma de tech mas relevante de LATAM</p>
+        <span class="badge-top">Confidencial &bull; Guia de Decisiones</span>
+        <h1>Enthropy AI + Cowire: Guia de Integracion</h1>
+        <p>Este documento es una guia de decisiones para definir juntos como se integran las dos empresas. Cada seccion tiene contexto, opciones y espacio para documentar los acuerdos.</p>
     </header>
 
     <div class="container">
@@ -558,25 +432,6 @@
             </div>
             <p>La idea es simple: juntar una <strong>maquina de ventas, relaciones y generacion de demanda</strong> (Front-Office) con un <strong>motor de ejecucion tecnica con IA y administracion que no se le va nada</strong> (Back-Office) para armar la firma de transformacion digital mas fuerte de LATAM.</p>
 
-            <div class="grid-4" style="margin-top: 2rem;">
-                <div class="metric-card">
-                    <div class="metric-value">$500k</div>
-                    <div class="metric-label">MXN/mes &mdash; Meta Fase 2</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">$5M</div>
-                    <div class="metric-label">MXN/mes &mdash; Vision a 3 años</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">25/25/25/25</div>
-                    <div class="metric-label">Equity entre 4 socios</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">90 dias</div>
-                    <div class="metric-label">Piloto antes de fusionar</div>
-                </div>
-            </div>
-
             <div class="callout callout-purple" style="margin-top: 1.5rem;">
                 <div class="callout-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -587,7 +442,7 @@
                 </div>
             </div>
 
-            <p style="margin-top: 1rem;">Al final del dia, queremos una sola empresa donde los 4 socios tengan el <strong>25%</strong>, subiendo las utilidades con IA, sistemas que escalan y cada quien en lo suyo, <strong>sin poner en riesgo lo que ya trae cada quien</strong>.</p>
+            <p style="margin-top: 1rem;">No son individuos uniendose &mdash; son <strong>dos empresas integrando sus operaciones</strong> para crear algo mas grande, <strong>sin poner en riesgo lo que ya trae cada quien</strong>.</p>
         </div>
 
         <!-- ============================================ -->
@@ -598,7 +453,7 @@
                 <div class="step-number">2</div>
                 <h2>Tesis Tecnologica: Por Que Ahora</h2>
             </div>
-            <p>Estamos en un momento clave. La ventana para posicionarse como lider en transformacion digital con IA es ahora &mdash; no en 2 años.</p>
+            <p>Estamos en un momento clave. La ventana para posicionarse como lider en transformacion digital con IA es ahora &mdash; no en 2 anos.</p>
 
             <div class="sub-title">El Cambio de Paradigma</div>
             <p>Por primera vez puedes convertir un concepto en una solucion implementada con herramientas como OpenAI Operator y Claude Code.</p>
@@ -617,1812 +472,607 @@
             <div class="sub-title">Infraestructura para Agentes: La Oportunidad Grande</div>
             <p><strong>Los CRMs y sistemas no van a ser para humanos &mdash; van a ser para agentes.</strong> Las empresas que no preparen su infraestructura la van a pasar mal.</p>
 
-            <ul class="styled-list" style="margin-top: 1rem;">
-                <li><strong>Go High Level:</strong> Ya anuncio conexion con OpenAI Operator. Equipo dedicado a IA. Por eso lo elegimos como CRM.</li>
-                <li><strong>ClickUp:</strong> API barebone + adquisicion de CodeGen. Entre mas crezcan los agentes, mas gana ClickUp.</li>
-                <li><strong>Monday y rigidas:</strong> Si no se adaptan, mueren. Ya puedes pedirle a un agente que construya un CRM.</li>
-                <li><strong>Google A2A:</strong> Protocolo Agent-to-Agent. Como MCP pero para comunicacion entre agentes. Lleva ~1 año.</li>
-                <li><strong>AI.com:</strong> Handles personales para agentes (@). Agentes como bridge entre empresas.</li>
-            </ul>
-
             <div class="callout callout-info">
                 <div class="callout-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
                 </div>
                 <div class="callout-content">
                     <h4>Donde entramos nosotros</h4>
-                    <p>No vendemos Operator hoy. <strong>Preparamos la infraestructura de los negocios para que cuando estos agentes sean lo normal, nuestros clientes ya esten listos.</strong> No importa si usan Manus, Operator o lo que salga &mdash; si la infraestructura esta, nada mas es conectarle el cerebro.</p>
+                    <p>No vendemos Operator hoy. <strong>Preparamos la infraestructura de los negocios para que cuando estos agentes sean lo normal, nuestros clientes ya esten listos.</strong></p>
                 </div>
             </div>
-
-            <div class="sub-title">Codigo vs. Plataformas: Caso Real</div>
-            <p>Un partner tenia 3 proyectos en Make + High Level. Mantenimiento insostenible. <strong>En ~4 horas, se refactorearon completamente a codigo con Claude Code.</strong></p>
-
-            <div class="callout callout-success">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div class="callout-content">
-                    <h4>Que significa para nosotros</h4>
-                    <p>Automatizaciones que tomarian semanas en Make se hacen <strong>con dos prompts en Claude Code</strong>. Mantenimiento mas simple, personalizacion facil, y los problemas se resuelven con IA.</p>
-                </div>
-            </div>
-
-            <div class="sub-title">Partnerships Automatizados</div>
-            <p>Conectas tu empresa a una plataforma, la otra se conecta, y un AI encuentra donde colaborar. El <strong>Head of Partnerships</strong> al final lo van a reemplazar alianzas automatizadas entre agentes.</p>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 3: RADIOGRAFIA DE LAS DOS AGENCIAS -->
+        <!-- SECCION 3: MODELO DE FUSION -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">3</div>
-                <h2>Radiografia: Como Opera Cada Agencia Hoy</h2>
+                <h2>Decision: Modelo de Fusion</h2>
             </div>
-            <p style="margin-bottom: 2rem;">Como opera cada agencia hoy, que trae cada quien a la mesa y donde nos complementamos.</p>
+            <p>Lo primero que tenemos que definir: <strong>como se unen las dos empresas</strong>. No estamos hablando de individuos &mdash; son Enthropy AI y Cowire integrando operaciones.</p>
 
-            <div class="grid-2">
-                <!-- ENTHROPY AI -->
-                <div class="agency-card agency-enthropy">
-                    <h3>Enthropy AI</h3>
-                    <p class="agency-subtitle">Christian Cover (COO/Legal/Fiscal) &bull; Juan Canavati (CTO) &bull; Marcelo Sada (CMO)</p>
-
-                    <div class="agency-section">
-                        <h4>Servicios que ofrecemos</h4>
-                        <ul class="styled-list">
-                            <li><strong>Consultoria tecnologica:</strong> Diagnostico de procesos, recomendaciones de stack y arquitectura de sistemas</li>
-                            <li><strong>Desarrollo de software:</strong> Aplicaciones web, plataformas custom, integraciones API</li>
-                            <li><strong>Automatizaciones:</strong> Flujos en Make.com, integraciones entre plataformas, bots</li>
-                            <li><strong>Soluciones de IA:</strong> Agentes con Claude, chatbots, analisis automatizado con LLMs</li>
-                        </ul>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Modelo de cobro</h4>
-                        <p><strong>Mixto:</strong> Algunos clientes por proyecto (cotizacion fija con anticipo + entrega) y otros por retainer mensual (soporte continuo o desarrollo en fases).</p>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Ingresos y costos actuales</h4>
-                        <p>Variable, dependiendo de proyectos activos.</p>
-                        <p style="margin-top: 0.5rem;"><strong>Costos fijos:</strong> Operacion lean. Prefieren freelancers por proyecto.</p>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Proceso de venta y entrega</h4>
-                        <p><strong>Semi-estructurado:</strong></p>
-                        <ol style="font-size: 0.9rem; padding-left: 1.5rem; color: var(--text-main); margin-top: 0.5rem;">
-                            <li>Cliente llega por referencia o contacto directo</li>
-                            <li>Discovery call para entender necesidades</li>
-                            <li>Propuesta tecnica + cotizacion</li>
-                            <li>Firma de contrato / aceptacion</li>
-                            <li>Kickoff + definicion de scope</li>
-                            <li>Ejecucion (sprints o fases)</li>
-                            <li>Entrega + QA + handoff</li>
-                        </ol>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Herramientas actuales</h4>
-                        <div>
-                            <span class="tool-tag">Asana (PM)</span>
-                            <span class="tool-tag">ClickUp</span>
-                            <span class="tool-tag">Slack (equipo)</span>
-                            <span class="tool-tag">Make.com</span>
-                            <span class="tool-tag">Claude Code</span>
-                            <span class="tool-tag">GitHub</span>
-                            <span class="tool-tag">WhatsApp (clientes)</span>
-                        </div>
-                    </div>
-
-
-                    <div class="agency-section" style="margin-bottom: 0;">
-                        <h4>Fortalezas clave</h4>
-                        <ul class="styled-list">
-                            <li><strong>IA como multiplicador:</strong> Juan dirige y apalanca al equipo con Claude Code &mdash; output de 3-4 devs</li>
-                            <li><strong>Codigo > Plataformas:</strong> Reemplazamos flujos de Make/High Level con codigo</li>
-                            <li><strong>Operacion lean:</strong> Costos fijos casi nulos, todo el margen es utilidad</li>
-                            <li><strong>Admin rigurosa:</strong> Christian cubre legal, fiscal, procesos y cobranza</li>
-                            <li><strong>Contenido data-driven:</strong> Marcelo construyendo orquestacion de agentes para ideacion de contenido</li>
-                        </ul>
-                    </div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 3.1</div>
+                <h4>Tipo de integracion</h4>
+                <div class="context">Como se estructura legalmente la union de las dos empresas.</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d3_1" value="newco"> <span><strong>NewCo:</strong> Se crea una nueva entidad legal. Enthropy y Cowire operan bajo la nueva marca. Las dos empresas originales pueden seguir existiendo o cerrarse.</span></label>
+                    <label class="decision-option"><input type="radio" name="d3_1" value="absorcion"> <span><strong>Absorcion:</strong> Una empresa absorbe a la otra. Se opera bajo una sola entidad existente.</span></label>
+                    <label class="decision-option"><input type="radio" name="d3_1" value="alianza"> <span><strong>Alianza operativa:</strong> Las dos empresas siguen existiendo por separado pero operan juntas con acuerdos formales de colaboracion y reparto.</span></label>
+                    <label class="decision-option"><input type="radio" name="d3_1" value="otro_fusion"> <span><strong>Otro modelo:</strong> Definir abajo.</span></label>
                 </div>
-
-                <!-- COWIRE / ALEJANDRO -->
-                <div class="agency-card agency-alex">
-                    <h3>Cowire (Alejandro)</h3>
-                    <p class="agency-subtitle">Alejandro &bull; CEO / Ventas Enterprise &bull; Equipo: Diego (full-time), Andrea (full-time), dev freelance por proyecto</p>
-
-                    <div class="agency-section">
-                        <h4>Servicios que ofrece</h4>
-                        <ul class="styled-list">
-                            <li><strong>Consultoria tecnologica enterprise:</strong> Diagnostico e implementacion para empresas medianas-grandes (proyectos hasta $500k MXN)</li>
-                            <li><strong>Integraciones de plataformas:</strong> Airtable, Go High Level, Kajabi, CRMs &mdash; integraciones plug-and-play</li>
-                            <li><strong>Automatizaciones con Make/High Level:</strong> Workflows estandarizados y personalizados</li>
-                            <li><strong>E-commerce (legacy):</strong> Experiencia previa en e-commerce, ahora migrando a tech consulting</li>
-                        </ul>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Modelo de cobro</h4>
-                        <p><strong>Proyecto + Retainer:</strong> Proyectos de alto valor. Prefiere integraciones sobre consultoria mensual.</p>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Ingresos y costos actuales</h4>
-                        <p>Facturacion activa con costos fijos de nomina, renta y software.</p>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Herramientas actuales</h4>
-                        <div>
-                            <span class="tool-tag">Go High Level</span>
-                            <span class="tool-tag">Airtable</span>
-                            <span class="tool-tag">Make.com</span>
-                            <span class="tool-tag">ClickUp</span>
-                            <span class="tool-tag">Softr</span>
-                        </div>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Cuellos de botella</h4>
-                        <ul class="styled-list">
-                            <li><strong>Delivery limitado:</strong> Vende mas de lo que puede ejecutar</li>
-                            <li><strong>Single point of failure:</strong> Si desaparece 2 semanas, la comunicacion con clientes se rompe</li>
-                            <li><strong>Consultoria no escala:</strong> Cada proyecto diferente, mucha energia emocional</li>
-                            <li><strong>Todologo:</strong> IT, RRHH, partnerships, ventas &mdash; quiere enfocarse en una sola funcion</li>
-                        </ul>
-                    </div>
-
-                    <div class="agency-section">
-                        <h4>Recursos que aporta a la fusion</h4>
-                        <ul class="styled-list">
-                            <li>Oficina fisica con espacio para equipo</li>
-                            <li>2 empleados full-time (Diego, Andrea) reasignables</li>
-                            <li>Programador freelance por proyecto para proyectos especificos</li>
-                            <li>Red de contactos enterprise, C-level y conexiones politicas para proyectos de gobierno</li>
-                            <li>Experiencia en ventas consultivas B2B de alto valor</li>
-                            <li>Expertise profundo en Go High Level y su ecosistema</li>
-                            <li>Pipeline activo con proyectos enterprise en puerta</li>
-                            <li>Carolina: nueva contratacion para manejar proyectos mid-size end-to-end (comunicacion con cliente, programacion, entrega)</li>
-                        </ul>
-                    </div>
-
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d3_1_notas" placeholder="Notas, condiciones o detalles adicionales..."></textarea>
                 </div>
             </div>
 
-            <!-- SINERGIA -->
-            <div class="callout callout-success" style="margin-top: 2rem;">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <div class="decision-card">
+                <div class="decision-label">Decision 3.2</div>
+                <h4>Nombre de la entidad</h4>
+                <div class="context">Como se va a llamar la empresa resultante.</div>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label>Nombre propuesto</label>
+                        <input type="text" class="field-input" id="d3_2_nombre" placeholder="Ej: The Tech Firm, Cowire+Enthropy, otro...">
+                    </div>
+                    <div class="field-group">
+                        <label>Tipo de sociedad</label>
+                        <input type="text" class="field-input" id="d3_2_sociedad" placeholder="Ej: SAPI de CV, SA de CV, SAS...">
+                    </div>
                 </div>
-                <div class="callout-content">
-                    <h4>Por que funciona esto</h4>
-                    <p><strong>Cowire:</strong> Puede vender mas pero no tiene quien ejecute a ese nivel. Necesita socios, no empleados. <strong>Enthropy:</strong> Motor tecnico con IA que ejecuta sin meter mas gente. <strong>Bonus:</strong> Enthropy trae orden, seguimiento y procesos al equipo de Alejandro (Diego, Andrea) para que rindan mas y las cosas salgan mas rapido. <strong>Resultado:</strong> Alejandro vende sin freno. Juan dirige la ejecucion apalancando a todo el equipo. Los dos lados crecen juntos.</p>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 3.3</div>
+                <h4>Periodo de prueba antes de formalizar</h4>
+                <div class="context">Cuanto tiempo operamos juntos antes de firmar algo legal.</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d3_3" value="60"> <span><strong>60 dias</strong> de piloto</span></label>
+                    <label class="decision-option"><input type="radio" name="d3_3" value="90"> <span><strong>90 dias</strong> de piloto</span></label>
+                    <label class="decision-option"><input type="radio" name="d3_3" value="120"> <span><strong>120 dias</strong> de piloto</span></label>
+                    <label class="decision-option"><input type="radio" name="d3_3" value="directo"> <span><strong>Directo:</strong> Formalizar desde el dia 1</span></label>
+                </div>
+                <div class="field-group">
+                    <label>Criterios de exito del piloto</label>
+                    <textarea class="field-textarea" id="d3_3_criterios" placeholder="Que tiene que pasar para decidir que funciona? Ej: X proyectos cerrados, sin conflictos graves, operacion sostenida..."></textarea>
                 </div>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 4: AUDITORIA OPERATIVA CRUZADA -->
+        <!-- SECCION 4: EQUITY Y PARTICIPACION -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">4</div>
-                <h2>Mini-Auditoria Operativa Cruzada</h2>
+                <h2>Decision: Equity y Participacion</h2>
             </div>
-            <p><strong>Si te desapareces dos semanas, que se cae?</strong> Ahi es donde hay que meter atencion.</p>
+            <p>Cuanto vale cada empresa en la mesa y como se reparte la propiedad. Esto es entre <strong>Enthropy AI</strong> y <strong>Cowire</strong> como empresas.</p>
 
-            <div class="grid-2" style="margin-top: 1.5rem;">
-                <div>
-                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1rem;">Enthropy AI &mdash; Hallazgos</h3>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-red">Critico</span> No usamos nuestra propia tecnologia internamente</h4>
-                        <div class="finding">Automatizamos para clientes pero nosotros no tenemos nada interno.</div>
-                        <div class="recommendation">Semana 1: tickets, llamadas, CRM propio, onboarding automatizado.</div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 4.1</div>
+                <h4>Estructura de equity</h4>
+                <div class="context">Como se divide la propiedad entre las dos empresas (no individuos).</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d4_1" value="5050"> <span><strong>50/50:</strong> Participacion igual entre Enthropy y Cowire</span></label>
+                    <label class="decision-option"><input type="radio" name="d4_1" value="proporcional"> <span><strong>Proporcional:</strong> Basado en lo que cada empresa aporta (revenue, equipo, clientes, etc.)</span></label>
+                    <label class="decision-option"><input type="radio" name="d4_1" value="custom"> <span><strong>Otro esquema:</strong> Definir porcentajes abajo</span></label>
+                </div>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label>% Enthropy AI</label>
+                        <input type="text" class="field-input" id="d4_1_enthropy" placeholder="Ej: 50%">
                     </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-red">Critico</span> Generacion de leads inexistente</h4>
-                        <div class="finding">Todo llega por referencia. No tenemos un sistema de generacion de leads.</div>
-                        <div class="recommendation">Marcelo mete contenido + Alejandro mete su red de contactos. Dos canales desde dia 1.</div>
-                    </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-orange">Alto</span> Ingresos inconsistentes</h4>
-                        <div class="finding">Ingresos inconsistentes entre meses. Sin retainers como baseline.</div>
-                        <div class="recommendation">Division de automatizaciones plug-and-play para revenue predecible.</div>
-                    </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-orange">Alto</span> Proceso de ventas debil</h4>
-                        <div class="finding">Sin pipeline formal ni follow-ups automaticos.</div>
-                        <div class="recommendation">CRM en Go High Level con pipeline y automatizaciones.</div>
-                    </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-blue">Medio</span> Dependencia de Juan en development</h4>
-                        <div class="finding">El cuello de botella no son las manos, es lo que tiene en la cabeza &mdash; conocimiento y protocolos.</div>
-                        <div class="recommendation">Bajar ese know-how a CLAUDE.md files, templates y SOPs.</div>
-                    </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-blue">Medio</span> Stagnation por exceso de prudencia</h4>
-                        <div class="finding">Guardando lana sin definir a donde meterla. Modo estancado.</div>
-                        <div class="recommendation">Esta fusion es la jugada. Tomar direccion y ejecutar.</div>
+                    <div class="field-group">
+                        <label>% Cowire</label>
+                        <input type="text" class="field-input" id="d4_1_cowire" placeholder="Ej: 50%">
                     </div>
                 </div>
-
-                <div>
-                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1rem;">Cowire (Alejandro) &mdash; Hallazgos</h3>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-red">Critico</span> Single point of failure en comunicacion</h4>
-                        <div class="finding">Los clientes enterprise solo hablan con Alejandro. Si se va 1 mes, se cae todo.</div>
-                        <div class="recommendation">Christian y/o Carolina se meten a la comunicacion del dia a dia con clientes.</div>
-                    </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-red">Critico</span> Sindrome del todologo</h4>
-                        <div class="finding">IT, RRHH, partnerships, ventas &mdash; todo recae en una persona.</div>
-                        <div class="recommendation">La fusion resuelve: cada socio en su cuadrante.</div>
-                    </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-orange">Alto</span> La consultoria no escala</h4>
-                        <div class="finding">Mucho desgaste y techo de capacidad.</div>
-                        <div class="recommendation">Separar consultoria de ejecucion. Division plug-and-play que genere revenue sin que el le meta.</div>
-                    </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-orange">Alto</span> Costos fijos sin leverage de IA</h4>
-                        <div class="finding">Costos fijos altos sin leverage de IA. El equipo podria rendir mucho mas.</div>
-                        <div class="recommendation">Reasignar a Diego y Andrea. Entrenarlos con IA. Carolina para proyectos mid-size.</div>
-                    </div>
-
-                    <div class="audit-item">
-                        <h4><span class="badge badge-blue">Medio</span> Empleados no sostienen un negocio</h4>
-                        <div class="finding">A un empleado le puedes delegar tareas, no un negocio.</div>
-                        <div class="recommendation">4 socios con equity = todos jalan parejo porque a todos les conviene.</div>
-                    </div>
+                <div class="field-group">
+                    <label>Justificacion / Criterios para definir el %</label>
+                    <textarea class="field-textarea" id="d4_1_justificacion" placeholder="Que se toma en cuenta? Revenue actual, equipo, clientes, capacidad tecnica, red de contactos..."></textarea>
                 </div>
             </div>
 
-            <div class="sub-title">Hallazgo Compartido: "El Zapatero sin Zapatos"</div>
-            <div class="callout callout-alert">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div class="decision-card">
+                <div class="decision-label">Decision 4.2</div>
+                <h4>Vesting (el equity se gana con el tiempo?)</h4>
+                <div class="context">Si una de las dos empresas/socios se sale al mes 3, se lleva todo su equity? O se gana poco a poco?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d4_2" value="vesting_24"> <span><strong>Vesting 24 meses</strong> con cliff de 6 meses (no ganas nada los primeros 6 meses, despues se acumula mensual)</span></label>
+                    <label class="decision-option"><input type="radio" name="d4_2" value="vesting_36"> <span><strong>Vesting 36 meses</strong> con cliff de 6 meses</span></label>
+                    <label class="decision-option"><input type="radio" name="d4_2" value="directo"> <span><strong>Equity directo:</strong> Desde el dia 1 cada quien tiene su %</span></label>
+                    <label class="decision-option"><input type="radio" name="d4_2" value="otro_vesting"> <span><strong>Otro esquema</strong></span></label>
                 </div>
-                <div class="callout-content">
-                    <h4>Los dos lados tienen el mismo problema</h4>
-                    <p>Le resolvemos todo a los clientes y nosotros no tenemos nada. <strong>Desde semana 1, implementamos para nosotros lo que vendemos afuera.</strong></p>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d4_2_notas" placeholder="Notas sobre el vesting..."></textarea>
                 </div>
             </div>
 
-            <div class="sub-title">No todo se automatiza (aun)</div>
-            <p>Legal, Compliance, RRHH, Finance &mdash; no se automatizan tan facil como Marketing/Ventas. Pero si se pueden crear sistemas que cubran el 80%. Lo que necesita a una persona, lo hace una persona.</p>
+            <div class="decision-card">
+                <div class="decision-label">Decision 4.3</div>
+                <h4>Que pasa con los socios internos de cada empresa?</h4>
+                <div class="context">Enthropy tiene 3 socios (Christian, Juan, Marcelo). Cowire es de Alejandro. Como se maneja eso internamente?</div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d4_3_notas" placeholder="Ej: El equity de Enthropy (50%) se divide entre sus 3 socios internamente. Cowire mantiene su 50%. Los acuerdos internos de cada empresa son independientes..."></textarea>
+                </div>
+            </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 5: DIVISION DE ROLES -->
+        <!-- SECCION 5: INCORPORACION DEL EQUIPO -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">5</div>
-                <h2>El Dream Team: Division Estricta de Roles</h2>
+                <h2>Decision: Incorporacion del Equipo Existente</h2>
             </div>
-            <p><strong>Front-Office</strong> (demanda y ventas) + <strong>Back-Office</strong> (ejecucion y operaciones). Cada socio se adueña de su area. Si algo falla, el responsable lo cubre hasta que meta a alguien, y se mueve a lo siguiente.</p>
+            <p>Cowire ya tiene un equipo operando. Tenemos que definir <strong>como se incorpora a las nuevas operaciones</strong>, que roles van a tener, y quien los dirige.</p>
 
-            <div class="grid-4" style="margin-top: 2rem;">
-                <div class="role-box role-ceo">
-                    <div class="icon-wrapper">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    </div>
-                    <h4>Alejandro</h4>
-                    <span class="role-title">CEO / Ventas Enterprise</span>
-                    <p><span class="badge badge-purple">Front-Office</span></p>
-                    <ul>
-                        <li>Cierre de tratos enterprise</li>
-                        <li>Relaciones con C-level</li>
-                        <li>Partnerships estrategicos</li>
-                        <li>Pricing y propuestas comerciales</li>
-                        <li>Manejo de cuentas clave</li>
-                        <li>Representacion en eventos</li>
-                        <li>Conexiones politicas / gobierno</li>
-                    </ul>
+            <div class="decision-card">
+                <div class="decision-label">Decision 5.1</div>
+                <h4>Equipo actual de Cowire: como se integra?</h4>
+                <div class="context">Cowire tiene empleados full-time y freelancers. Definir que pasa con cada uno en la nueva estructura.</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d5_1" value="absorbe"> <span><strong>La nueva entidad los absorbe:</strong> Pasan a nomina de la nueva empresa</span></label>
+                    <label class="decision-option"><input type="radio" name="d5_1" value="cowire_paga"> <span><strong>Cowire sigue pagandoles:</strong> Pero trabajan en proyectos conjuntos. El costo se ajusta en el profit share</span></label>
+                    <label class="decision-option"><input type="radio" name="d5_1" value="compartido"> <span><strong>Costo compartido:</strong> Las dos empresas dividen el costo del equipo proporcionalmente</span></label>
+                    <label class="decision-option"><input type="radio" name="d5_1" value="otro_equipo"> <span><strong>Otro modelo</strong></span></label>
                 </div>
-
-                <div class="role-box role-cmo">
-                    <div class="icon-wrapper">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                    </div>
-                    <h4>Marcelo</h4>
-                    <span class="role-title">CMO / La Cara</span>
-                    <p><span class="badge badge-green">Front-Office</span></p>
-                    <ul>
-                        <li>Contenido YouTube / Redes</li>
-                        <li>Inbound lead generation</li>
-                        <li>Posicionamiento como experto en IA</li>
-                        <li>Demos y presentaciones</li>
-                        <li>Branding de The Tech Firm</li>
-                        <li>Webinars y thought leadership</li>
-                        <li>Podcasts y entrevistas</li>
-                    </ul>
-                </div>
-
-                <div class="role-box role-cto">
-                    <div class="icon-wrapper">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                    </div>
-                    <h4>Juan</h4>
-                    <span class="role-title">CTO / El Cerebro</span>
-                    <p><span class="badge badge-red">Back-Office</span></p>
-                    <ul>
-                        <li>Arquitectura de software</li>
-                        <li>Lead tecnico: dirige y apalanca al equipo</li>
-                        <li>Automatizaciones complejas</li>
-                        <li>Agentes de IA y LLMs</li>
-                        <li>Estimacion tecnica de proyectos</li>
-                        <li>QA y code review</li>
-                        <li>Capacitar al equipo en IA y Claude Code</li>
-                    </ul>
-                </div>
-
-                <div class="role-box role-coo">
-                    <div class="icon-wrapper">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                    </div>
-                    <h4>Christian</h4>
-                    <span class="role-title">COO / El Motor</span>
-                    <p><span class="badge badge-orange">Back-Office</span></p>
-                    <ul>
-                        <li>Gestion administrativa y financiera</li>
-                        <li>Legal, fiscal y compliance</li>
-                        <li>Control del burn rate</li>
-                        <li>Cobranza y facturacion</li>
-                        <li>Coordinacion con freelancers</li>
-                        <li>Project management (Asana)</li>
-                        <li>Entrega impecable de proyectos</li>
-                    </ul>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d5_1_notas" placeholder="Detalles de como se integra cada persona del equipo..."></textarea>
                 </div>
             </div>
 
-            <div class="callout callout-info" style="margin-top: 2rem;">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                </div>
-                <div class="callout-content">
-                    <h4>Cada quien manda en su area</h4>
-                    <p>Cada socio tiene la ultima palabra en su cuadrante. Lo que cruza areas se decide en junta. <strong>Pero todos pueden entrarle a todo</strong> &mdash; no al 100%, pero sacan adelante. Esa es la diferencia con un empleado.</p>
+            <div class="decision-card">
+                <div class="decision-label">Decision 5.2</div>
+                <h4>Roles del equipo en la nueva operacion</h4>
+                <div class="context">Que funcion va a cumplir cada miembro del equipo existente bajo la nueva estructura. Quien los dirige y a quien reportan.</div>
+                <div class="field-group">
+                    <label>Definicion de roles por persona</label>
+                    <textarea class="field-textarea" id="d5_2_roles" placeholder="Para cada miembro del equipo actual: que rol tendria, que funciones, a quien reporta..." style="min-height:120px;"></textarea>
                 </div>
             </div>
 
-            <div class="sub-title">Equipo de Soporte (Empleados y Freelancers)</div>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Persona</th>
-                            <th>Rol Actual</th>
-                            <th>Rol Propuesto en The Tech Firm</th>
-                            <th>Reporta a</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Carolina</strong> (nueva)</td>
-                            <td>Por contratar</td>
-                            <td>Mid-size project manager: maneja cliente, programa, entrega. Proyectos plug-and-play de automatizacion.</td>
-                            <td>Christian (ops) / Alejandro (ventas)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Diego</strong></td>
-                            <td>Full-time Cowire</td>
-                            <td>Delivery y ejecucion de proyectos. Juan lo entrena en IA y Claude Code para multiplicar su capacidad.</td>
-                            <td>Juan (tecnico) / Christian (ops)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Andrea</strong></td>
-                            <td>Full-time Cowire</td>
-                            <td>Soporte operativo, coordinacion de entregas, seguimiento a clientes mid-size.</td>
-                            <td>Christian (ops)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dev Freelance</strong></td>
-                            <td>Freelance por proyecto</td>
-                            <td>Desarrollo por proyecto. Juan define scope y revisa. Se activa cuando hay carga fuerte.</td>
-                            <td>Juan (tecnico)</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="decision-card">
+                <div class="decision-label">Decision 5.3</div>
+                <h4>Entrenamiento y capacitacion</h4>
+                <div class="context">El equipo de Cowire puede rendir mas con herramientas de IA. Como y cuando se les entrena?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d5_3" value="inmediato"> <span><strong>Desde el dia 1:</strong> Enthropy entrena al equipo en IA y Claude Code como parte del piloto</span></label>
+                    <label class="decision-option"><input type="radio" name="d5_3" value="gradual"> <span><strong>Gradual:</strong> Se entrena conforme haya proyectos que lo requieran</span></label>
+                    <label class="decision-option"><input type="radio" name="d5_3" value="post_piloto"> <span><strong>Despues del piloto:</strong> Primero se valida la relacion, luego se invierte en entrenamiento</span></label>
+                </div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d5_3_notas" placeholder="Plan de entrenamiento, quien lo da, timeline..."></textarea>
+                </div>
             </div>
-
-            <div class="sub-title">La Cara de la Marca: Persona > Empresa</div>
-            <p>La gente sigue personas, no empresas. Marcelo es el candidato para ser la cara de tech en LATAM. Todos lo empujamos.</p>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 6: DIVISIONES DE NEGOCIO -->
+        <!-- SECCION 6: ABSORCION DE COSTOS -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">6</div>
-                <h2>Divisiones de Negocio de The Tech Firm</h2>
+                <h2>Decision: Absorcion de Costos</h2>
             </div>
-            <p>No somos una sola cosa. Somos una firma con divisiones, cada una con su forma de generar revenue y su potencial de crecimiento.</p>
+            <p>Cada empresa tiene costos fijos diferentes. Tenemos que definir <strong>quien paga que</strong> y como se comparten los gastos.</p>
 
-            <div class="grid-3" style="margin-top: 2rem;">
-                <!-- Division 1: Consultoria -->
-                <div class="service-card">
-                    <div class="service-icon">🔎</div>
-                    <h4>Consultoria</h4>
-                    <p>Diagnostico, auditorias, recomendaciones de stack, roadmap de digitalizacion e implementacion. Proyectos enterprise de alto valor. Incluye desarrollo de software, IA y agentes.</p>
-                    <div class="service-price">Proyecto: $45k&ndash;$500k MXN</div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 6.1</div>
+                <h4>Costos fijos de Cowire (nomina, renta, software)</h4>
+                <div class="context">Cowire tiene costos fijos mensuales de equipo, oficina y herramientas. Como se manejan estos costos en la nueva operacion?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d6_1" value="cowire_absorbe"> <span><strong>Cowire los absorbe:</strong> Son costos de Cowire. Se descuentan antes del profit share</span></label>
+                    <label class="decision-option"><input type="radio" name="d6_1" value="compartidos"> <span><strong>Se comparten:</strong> Ambas empresas dividen los costos fijos (50/50 o proporcional al equity)</span></label>
+                    <label class="decision-option"><input type="radio" name="d6_1" value="newco_paga"> <span><strong>La nueva entidad los paga:</strong> Todos los costos salen de los ingresos conjuntos</span></label>
                 </div>
-
-                <!-- Division 2: Marketing -->
-                <div class="service-card">
-                    <div class="service-icon">📢</div>
-                    <h4>Marketing</h4>
-                    <p>Contenido, inbound, posicionamiento de marca, redes sociales, YouTube. Marcelo lidera. Genera leads para las demas divisiones y vende servicios de marketing a clientes.</p>
-                    <div class="service-price">Proyecto: $30k&ndash;$150k MXN</div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d6_1_notas" placeholder="Detalles, excepciones, condiciones..."></textarea>
                 </div>
+            </div>
 
-                <!-- Division 3: Automatizaciones -->
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h4>Automatizaciones</h4>
-                    <p>Workflows con Make, n8n, High Level, integraciones. Desde sencillas (Carolina ejecuta) hasta complejas (Juan dirige). Revenue predecible sin depender de los socios.</p>
-                    <div class="service-price">Proyecto: $30k&ndash;$200k MXN</div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 6.2</div>
+                <h4>Costos fijos de Enthropy (software, tokens, herramientas)</h4>
+                <div class="context">Enthropy tiene costos operativos lean. Misma pregunta: como se manejan?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d6_2" value="enthropy_absorbe"> <span><strong>Enthropy los absorbe:</strong> Se descuentan antes del profit share</span></label>
+                    <label class="decision-option"><input type="radio" name="d6_2" value="compartidos"> <span><strong>Se comparten</strong></span></label>
+                    <label class="decision-option"><input type="radio" name="d6_2" value="newco_paga"> <span><strong>La nueva entidad los paga</strong></span></label>
                 </div>
+            </div>
 
-                <!-- Division 4: Administracion -->
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h4>Administracion</h4>
-                    <p>Division interna, no genera revenue directo. Legal, fiscal, cobranza, facturacion, coordinacion de equipo, seguimiento de proyectos, dashboard de clientes, soporte.</p>
-                    <div class="service-price">Costo interno &mdash; Christian lidera</div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 6.3</div>
+                <h4>Oficina</h4>
+                <div class="context">Cowire tiene oficina fisica. Enthropy opera remoto. Que hacemos?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d6_3" value="cowire_oficina"> <span><strong>Usar la de Cowire:</strong> Se comparte el costo o Cowire lo absorbe</span></label>
+                    <label class="decision-option"><input type="radio" name="d6_3" value="remoto"> <span><strong>100% remoto:</strong> Se elimina el costo de renta</span></label>
+                    <label class="decision-option"><input type="radio" name="d6_3" value="hibrido"> <span><strong>Hibrido:</strong> Oficina disponible pero no obligatoria</span></label>
+                    <label class="decision-option"><input type="radio" name="d6_3" value="nueva"> <span><strong>Oficina nueva:</strong> Se busca un espacio conjunto</span></label>
                 </div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d6_3_notas" placeholder="Quien paga la renta? Se divide? Se descuenta del profit share?"></textarea>
+                </div>
+            </div>
 
-                <!-- Division 5: Relaciones -->
-                <div class="service-card">
-                    <div class="service-icon">🤝</div>
-                    <h4>Relaciones</h4>
-                    <p>Partnerships, red de contactos enterprise, C-level, gobierno. Alejandro trae los deals y mantiene las relaciones. Revenue por comision o proyectos referidos.</p>
-                    <div class="service-price">Variable &mdash; Alejandro lidera</div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 6.4</div>
+                <h4>Costos de proyectos (freelancers, APIs, hosting)</h4>
+                <div class="context">Cuando un proyecto necesita costos adicionales (freelancers, herramientas), quien los cubre?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d6_4" value="proyecto"> <span><strong>Se descuentan del proyecto:</strong> Ingresos del proyecto - costos = utilidad a repartir</span></label>
+                    <label class="decision-option"><input type="radio" name="d6_4" value="quien_ejecuta"> <span><strong>Los paga quien ejecuta:</strong> La empresa que lleva la ejecucion los absorbe</span></label>
+                    <label class="decision-option"><input type="radio" name="d6_4" value="fondo"> <span><strong>Fondo comun:</strong> Se crea un fondo operativo conjunto para cubrir costos de proyectos</span></label>
                 </div>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 7: PROCESO OPERATIVO -->
+        <!-- SECCION 7: PROFIT SHARE -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">7</div>
-                <h2>Proceso Operativo: De la Venta a la Entrega</h2>
+                <h2>Decision: Profit Share</h2>
+            </div>
+            <p>Como se reparten las utilidades de los proyectos conjuntos. Este es probablemente el punto mas importante.</p>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 7.1</div>
+                <h4>Modelo de reparto de utilidades</h4>
+                <div class="context">Despues de cubrir los costos del proyecto, como se divide lo que queda entre las dos empresas?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d7_1" value="fijo"> <span><strong>Porcentaje fijo:</strong> Siempre se reparte igual (ej: 50/50, 60/40) sin importar quien hizo mas</span></label>
+                    <label class="decision-option"><input type="radio" name="d7_1" value="por_rol"> <span><strong>Por rol en el proyecto:</strong> Quien vende se lleva X%, quien ejecuta se lleva Y%. Varia segun el proyecto</span></label>
+                    <label class="decision-option"><input type="radio" name="d7_1" value="hibrido"> <span><strong>Hibrido:</strong> Un % fijo base + un % variable segun contribucion por proyecto</span></label>
+                    <label class="decision-option"><input type="radio" name="d7_1" value="otro_profit"> <span><strong>Otro modelo</strong></span></label>
+                </div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d7_1_notas" placeholder="Detallar el modelo elegido con porcentajes concretos..."></textarea>
+                </div>
             </div>
 
-            <div class="process-flow">
-                <div class="process-step">Prospecto</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-green">Discovery</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-purple">Propuesta</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-warning">Contrato</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step">Kickoff</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-green">Ejecucion</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-purple">Entrega</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-warning">Soporte</div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 7.2</div>
+                <h4>Proyectos que trae cada empresa</h4>
+                <div class="context">Cuando Cowire cierra un deal con su red y Enthropy ejecuta (o viceversa), como se reparte?</div>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label>Cowire vende + Enthropy ejecuta</label>
+                        <input type="text" class="field-input" id="d7_2_cowire_vende" placeholder="Ej: 40% Cowire / 60% Enthropy">
+                    </div>
+                    <div class="field-group">
+                        <label>Enthropy vende + Cowire ejecuta</label>
+                        <input type="text" class="field-input" id="d7_2_enthropy_vende" placeholder="Ej: 60% Enthropy / 40% Cowire">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label>Ambos venden + ambos ejecutan</label>
+                        <input type="text" class="field-input" id="d7_2_ambos" placeholder="Ej: 50/50">
+                    </div>
+                    <div class="field-group">
+                        <label>Proyecto interno (educacion, contenido)</label>
+                        <input type="text" class="field-input" id="d7_2_interno" placeholder="Ej: segun equity">
+                    </div>
+                </div>
             </div>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Fase</th>
-                            <th>Que Pasa</th>
-                            <th>Responsable</th>
-                            <th>Entregable</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1. Prospecto</strong></td>
-                            <td><strong>Inbound</strong> (Marcelo: contenido, redes) + <strong>Outbound</strong> (Alejandro: red, referidos, eventos). Triage automatico.</td>
-                            <td>Alejandro (outbound)<br>Marcelo (inbound)</td>
-                            <td>Lead calificado en CRM (Go High Level)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>2. Discovery</strong></td>
-                            <td>Call 30-45 min. Dolor, stack, presupuesto. <strong>Transcripcion automatica a Asana con tareas y sprint points.</strong></td>
-                            <td>Alejandro (lead)<br>Juan (soporte tecnico)</td>
-                            <td>Brief del proyecto + notas automatizadas</td>
-                        </tr>
-                        <tr>
-                            <td><strong>3. Propuesta</strong></td>
-                            <td>Juan estima tecnico. Christian costea. Alejandro pricing. <strong>&lt;5 dias.</strong></td>
-                            <td>Juan (estimacion)<br>Christian (costeo)<br>Alejandro (pricing)</td>
-                            <td>Propuesta comercial + scope tecnico</td>
-                        </tr>
-                        <tr>
-                            <td><strong>4. Contrato</strong></td>
-                            <td>Scope, timeline, precios. <strong>50% anticipo obligatorio.</strong> No se empieza sin anticipo.</td>
-                            <td>Alejandro (cierre)<br>Christian (facturacion)</td>
-                            <td>Contrato firmado + anticipo cobrado</td>
-                        </tr>
-                        <tr>
-                            <td><strong>5. Kickoff</strong></td>
-                            <td>Arranque con cliente. Valida scope, calendario, accesos.</td>
-                            <td>Christian (lead PM)<br>Equipo completo</td>
-                            <td>Proyecto en Asana + timeline + accesos</td>
-                        </tr>
-                        <tr>
-                            <td><strong>6. Ejecucion</strong></td>
-                            <td>Sprints semanales. Juan dirige desarrollo y apalanca al equipo (Diego, Andrea, dev freelance) con Claude Code. Christian coordina y da seguimiento. Status updates semanales al cliente via dashboard.</td>
-                            <td>Juan (lead tecnico)<br>Christian (PM)<br>Equipo de delivery</td>
-                            <td>Entregas parciales por sprint</td>
-                        </tr>
-                        <tr>
-                            <td><strong>7. Entrega</strong></td>
-                            <td>QA, demo, handoff. Cobro del <strong>50% restante</strong>. Reporte final en dashboard del cliente. Propuesta de retainer o educacion.</td>
-                            <td>Christian (entrega + cobro)<br>Alejandro (relacion)</td>
-                            <td>Proyecto entregado + cobro final + NPS</td>
-                        </tr>
-                        <tr>
-                            <td><strong>8. Soporte</strong></td>
-                            <td>30 dias de soporte incluido. Cliente mete tickets por el dashboard. <strong>IA diagnostica y resuelve automatico.</strong> Upsell retainer/educacion.</td>
-                            <td>Alejandro (upsell)<br>Christian (soporte)<br>Carolina (plug-and-play)</td>
-                            <td>Contrato de retainer o educacion (opcional)</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="decision-card">
+                <div class="decision-label">Decision 7.3</div>
+                <h4>Clientes y proyectos que ya tiene cada empresa</h4>
+                <div class="context">Cada empresa ya tiene clientes activos. Esos proyectos entran al profit share o se quedan de quien los tiene?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d7_3" value="separados"> <span><strong>Se quedan separados:</strong> Los clientes actuales de cada empresa no entran al profit share. Solo los nuevos</span></label>
+                    <label class="decision-option"><input type="radio" name="d7_3" value="migran"> <span><strong>Migran gradualmente:</strong> A partir del mes X, todos los proyectos pasan a la nueva operacion</span></label>
+                    <label class="decision-option"><input type="radio" name="d7_3" value="desde_dia_1"> <span><strong>Desde el dia 1:</strong> Todo entra al pot comun desde el arranque</span></label>
+                </div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d7_3_notas" placeholder="Condiciones, excepciones, timeline..."></textarea>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 7.4</div>
+                <h4>Frecuencia de reparto</h4>
+                <div class="context">Cada cuando se reparten las utilidades?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d7_4" value="proyecto"> <span><strong>Por proyecto:</strong> Se reparte al cobrar cada proyecto</span></label>
+                    <label class="decision-option"><input type="radio" name="d7_4" value="mensual"> <span><strong>Mensual:</strong> Se hace corte cada mes</span></label>
+                    <label class="decision-option"><input type="radio" name="d7_4" value="trimestral"> <span><strong>Trimestral:</strong> Se acumula y se reparte cada 3 meses</span></label>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 7.5</div>
+                <h4>Reinversion y fondo de emergencia</h4>
+                <div class="context">Antes de repartir, se aparta algo para reinvertir o como colchon?</div>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label>% de reinversion</label>
+                        <input type="text" class="field-input" id="d7_5_reinversion" placeholder="Ej: 15% de utilidades">
+                    </div>
+                    <div class="field-group">
+                        <label>Fondo de emergencia</label>
+                        <input type="text" class="field-input" id="d7_5_emergencia" placeholder="Ej: 3 meses de costos fijos">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 8: STACK DE HERRAMIENTAS -->
+        <!-- SECCION 8: ROLES Y RESPONSABILIDADES -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">8</div>
-                <h2>Stack de Herramientas y Sistemas</h2>
+                <h2>Decision: Roles y Responsabilidades</h2>
             </div>
+            <p>Quien hace que. Division clara para que no haya ambiguedades ni pisarse los pies.</p>
 
-            <div class="grid-2">
-                <div>
-                    <div class="sub-title">Operacion Interna</div>
-                    <div class="table-container">
-                        <table>
-                            <thead><tr><th>Herramienta</th><th>Uso</th></tr></thead>
-                            <tbody>
-                                <tr><td><strong>Asana</strong></td><td>PM de proyectos, sprints, tracking de entregas</td></tr>
-                                <tr><td><strong>ClickUp / Go High Level</strong></td><td>Pipeline de ventas, CRM, follow-ups, landing pages. Integracion con Operator.</td></tr>
-                                <tr><td><strong>Slack</strong></td><td>Comunicacion interna, canales por proyecto</td></tr>
-                                <tr><td><strong>Google Workspace</strong></td><td>Docs, Drive, email corporativo</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 8.1</div>
+                <h4>Division Front-Office / Back-Office</h4>
+                <div class="context">La propuesta es: <strong>Cowire = Front-Office</strong> (ventas, relaciones, deals) y <strong>Enthropy = Back-Office</strong> (ejecucion tecnica, IA, administracion). Funciona asi o se ajusta?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d8_1" value="si"> <span><strong>Si:</strong> Cowire vende y maneja relaciones. Enthropy ejecuta y administra.</span></label>
+                    <label class="decision-option"><input type="radio" name="d8_1" value="mixto"> <span><strong>Mixto:</strong> Los dos venden y los dos ejecutan, pero con especializaciones</span></label>
+                    <label class="decision-option"><input type="radio" name="d8_1" value="otro_roles"> <span><strong>Otra division</strong></span></label>
                 </div>
-                <div>
-                    <div class="sub-title">Delivery y Clientes</div>
-                    <div class="table-container">
-                        <table>
-                            <thead><tr><th>Herramienta</th><th>Uso</th></tr></thead>
-                            <tbody>
-                                <tr><td><strong>Claude Code</strong></td><td>Desarrollo con IA. Multiplicador core.</td></tr>
-                                <tr><td><strong>GitHub</strong></td><td>Repos, CI/CD, versiones</td></tr>
-                                <tr><td><strong>Make.com / n8n</strong></td><td>Automatizaciones cuando no amerita codigo custom</td></tr>
-                                <tr><td><strong>Vercel / Hostinger</strong></td><td>Hosting y deployments</td></tr>
-                                <tr><td><strong>Airtable</strong></td><td>DB flexible para integraciones</td></tr>
-                                <tr><td><strong>Dashboard Custom</strong></td><td>Portal de clientes: reportes semanales, tickets de soporte, status de proyectos. Desarrollado in-house.</td></tr>
-                                <tr><td><strong>WhatsApp Business</strong></td><td>Comunicacion con clientes</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d8_1_notas" placeholder="Detalles de la division de roles..."></textarea>
                 </div>
             </div>
 
-            <div class="sub-title">Comunicacion: Quien Habla con Quien</div>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Canal</th><th>Participantes</th><th>Frecuencia</th><th>Proposito</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Junta de Socios</strong></td><td>4 socios</td><td>Semanal (1 hr)</td><td>Pipeline, finanzas, decisiones estrategicas, review de KPIs por division</td></tr>
-                        <tr><td><strong>Daily Standup</strong></td><td>4 socios (Slack async)</td><td>Diario</td><td>Que hice ayer, que hago hoy, blockers</td></tr>
-                        <tr><td><strong>Sync Ventas-Delivery</strong></td><td>Alejandro + Christian</td><td>2x/semana</td><td>Proyectos nuevos, capacidad, estimaciones, handoff</td></tr>
-                        <tr><td><strong>Status al Cliente</strong></td><td>Christian + Cliente</td><td>Semanal</td><td>Progreso, siguientes pasos, blockers</td></tr>
-                        <tr><td><strong>Review Tecnico</strong></td><td>Juan + Christian</td><td>Por sprint</td><td>QA, code review, testing antes de entregar</td></tr>
-                    </tbody>
-                </table>
+            <div class="decision-card">
+                <div class="decision-label">Decision 8.2</div>
+                <h4>Toma de decisiones</h4>
+                <div class="context">Como se toman las decisiones? Quien tiene la ultima palabra en que?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d8_2" value="autonomia"> <span><strong>Autonomia por area:</strong> Cada empresa decide en su area (Cowire en ventas, Enthropy en tech). Lo que cruza areas se decide en conjunto</span></label>
+                    <label class="decision-option"><input type="radio" name="d8_2" value="consenso"> <span><strong>Consenso:</strong> Todas las decisiones importantes se toman entre los dos lados</span></label>
+                    <label class="decision-option"><input type="radio" name="d8_2" value="mayoria"> <span><strong>Por mayoria:</strong> Si hay empate, se define un mecanismo de desempate</span></label>
+                </div>
+                <div class="field-group">
+                    <label>Mecanismo de desempate</label>
+                    <textarea class="field-textarea" id="d8_2_desempate" placeholder="Que pasa cuando no nos ponemos de acuerdo? Mediador externo, voto de calidad, domain authority..."></textarea>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 8.3</div>
+                <h4>Comunicacion y cadencia de juntas</h4>
+                <div class="context">Con que frecuencia nos sincronizamos y como nos comunicamos.</div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d8_3_notas" placeholder="Ej: Junta semanal de 1hr, daily async en Slack, sync ventas-delivery 2x/semana..." style="min-height:100px;"></textarea>
+                </div>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 9: FASE 1 - PILOTO -->
+        <!-- SECCION 9: OPERACION DEL DIA A DIA -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">9</div>
-                <h2>Fase 1: El Piloto Comercial (Dias 1 a 90)</h2>
+                <h2>Decision: Operacion del Dia a Dia</h2>
+            </div>
+            <p>Como fluye un proyecto desde que entra hasta que se cobra.</p>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 9.1</div>
+                <h4>Proceso de venta a entrega</h4>
+                <div class="context">Cuando entra un prospecto, quien hace que en cada paso?</div>
+                <div class="field-group">
+                    <label>Prospecto / Lead generation</label>
+                    <textarea class="field-textarea" id="d9_1_prospecto" placeholder="Quien lo trae? Inbound, outbound, referidos..."></textarea>
+                </div>
+                <div class="field-group">
+                    <label>Discovery / Diagnostico</label>
+                    <textarea class="field-textarea" id="d9_1_discovery" placeholder="Quien hace la llamada? Quien participa?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label>Propuesta y cotizacion</label>
+                    <textarea class="field-textarea" id="d9_1_propuesta" placeholder="Quien estima, quien costea, quien presenta al cliente?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label>Ejecucion / Delivery</label>
+                    <textarea class="field-textarea" id="d9_1_ejecucion" placeholder="Quien dirige, quien ejecuta, como se coordina?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label>Entrega y cobro</label>
+                    <textarea class="field-textarea" id="d9_1_entrega" placeholder="Quien entrega, quien cobra, politica de anticipo..."></textarea>
+                </div>
             </div>
 
-            <div class="callout callout-alert">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="callout-content">
-                    <h4>Regla de Oro: Sin Riesgo</h4>
-                    <p>No se mezclan cuentas ni se crea nada legal. Cada agencia mantiene su flujo intacto. Nada mas se prueba trabajar juntos en proyectos reales.</p>
-                </div>
-            </div>
-
-            <div class="grid-2" style="margin-top: 1.5rem;">
-                <div class="agency-card agency-enthropy" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem;">Flujo de Enthropy (Intacto)</h3>
-                    <ul class="styled-list" style="margin-top: 1rem;">
-                        <li>Flujo de ingresos sigue intacto</li>
-                        <li>Clientes actuales sin cambios</li>
-                        <li>Costos operativos cubiertos</li>
-                    </ul>
-                </div>
-                <div class="agency-card agency-alex" style="padding: 1.5rem;">
-                    <h3 style="font-size: 1.1rem;">Flujo de Cowire (Intacto)</h3>
-                    <ul class="styled-list" style="margin-top: 1rem;">
-                        <li>Flujo de ingresos sigue intacto</li>
-                        <li>Proyectos activos de Alejandro al 100% suyos</li>
-                        <li>Equipo (Diego, Andrea) sigue operando normal</li>
-                    </ul>
+            <div class="decision-card">
+                <div class="decision-label">Decision 9.2</div>
+                <h4>Herramientas y stack compartido</h4>
+                <div class="context">Que herramientas usamos en comun para operar?</div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d9_2_stack" placeholder="Ej: Asana (PM), Go High Level (CRM), Slack (comunicacion), GitHub (codigo), Claude Code (desarrollo)..." style="min-height:100px;"></textarea>
                 </div>
             </div>
 
-            <div class="sub-title">Proyectos Actuales de Cowire: Intercambio Estrategico</div>
-            <p>Enthropy ayuda con los proyectos existentes de Cowire como inversion en la relacion. A cambio, Alejandro mete deals nuevos al pipeline conjunto. No se cobra entre nosotros durante los 90 dias.</p>
-
-            <div class="table-container" style="margin-top: 1rem; margin-bottom: 1.5rem;">
-                <table>
-                    <thead><tr><th>Enthropy aporta</th><th>Cowire aporta</th></tr></thead>
-                    <tbody>
-                        <tr><td>Juan revisa y mejora proyectos actuales de Cowire</td><td>Alejandro mete deals nuevos al pipeline conjunto</td></tr>
-                        <tr><td>Christian coordina al equipo (Diego, Andrea) en Asana</td><td>Acceso a su red de contactos enterprise y C-level</td></tr>
-                        <tr><td>Juan entrena a Diego y Andrea en Claude Code e IA</td><td>Oficina, recursos y equipo disponible</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="sub-title">Optimizacion del Equipo de Cowire (90 dias)</div>
-            <div class="table-container" style="margin-top: 1rem; margin-bottom: 2rem;">
-                <table>
-                    <thead><tr><th>Periodo</th><th>Que pasa</th><th>Resultado</th></tr></thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Semana 1-2</strong></td>
-                            <td>Christian mapea proyectos activos, mete todo a Asana con deadlines y responsables. Daily standups de 10 min.</td>
-                            <td>Visibilidad total de que hace cada quien</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Semana 3-4</strong></td>
-                            <td>Juan entrena a Diego en Claude Code. SOPs y CLAUDE.md files por tipo de proyecto. Andrea aprende a dar updates y manejar tickets.</td>
-                            <td>Diego ejecuta integraciones solo. Andrea maneja comunicacion con clientes.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Mes 2</strong></td>
-                            <td>Diego ya hace integraciones (GHL, Airtable, Softr) con Claude Code. Juan solo revisa. Carolina operando mid-size. Reportes semanales automatizados.</td>
-                            <td>Equipo rindiendo 2x. Alejandro ya no supervisa operacion.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Mes 3</strong></td>
-                            <td>4-5 proyectos simultaneos sin que Juan este en todos. Dashboard de clientes live. Alejandro se va de luna de miel y nada se cae.</td>
-                            <td>Equipo autonomo. Capacidad operativa 3-4x vs hoy.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="sub-title">Modelo de Colaboracion: Transfer Pricing (Proyectos Nuevos)</div>
-            <p>Cuando Alejandro cierre un <strong>PROYECTO NUEVO</strong> (no de los que ya tiene), subcontrata la ejecucion a Enthropy. Quien mete mas trabajo se lleva mas. Ajustable por proyecto si ambos estan de acuerdo.</p>
-
-            <div class="table-container" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tipo de Proyecto</th>
-                            <th>% Enthropy</th>
-                            <th>% Cowire</th>
-                            <th>Quien ejecuta</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Consultoria &amp; Enterprise</strong></td>
-                            <td><strong>70%</strong></td>
-                            <td>30%</td>
-                            <td>Enthropy (diagnostico, arquitectura, implementacion)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Automatizaciones Complejas</strong></td>
-                            <td><strong>55%</strong></td>
-                            <td>45%</td>
-                            <td>Juan dirige + Cowire apoya (GHL/Airtable/Softr)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Automatizaciones Sencillas</strong></td>
-                            <td>40%</td>
-                            <td><strong>60%</strong></td>
-                            <td>Carolina / equipo Cowire ejecuta, Enthropy revisa</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Auditorias</strong></td>
-                            <td><strong>65%</strong></td>
-                            <td>35%</td>
-                            <td>Enthropy analiza y entrega, Cowire vende</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Relaciones &amp; Partnerships</strong></td>
-                            <td>40%</td>
-                            <td><strong>60%</strong></td>
-                            <td>Alejandro trae el deal, Enthropy soporte tecnico</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="insight-box" style="margin-top: 1.5rem;">
-                <h4>Ejemplo: Proyecto de Consultoria (70/30)</h4>
-                <p style="margin-top: 0.5rem;">
-                    Alejandro vende y cierra &rarr; 50% anticipo &rarr; Enthropy ejecuta en Asana &rarr; entrega + cobra el resto.<br>
-                    Cada lado recibe su porcentaje segun el tipo de proyecto.
-                </p>
-            </div>
-
-            <div class="sub-title">KPIs del Piloto (90 dias)</div>
-            <div class="grid-4" style="margin-top: 0.5rem;">
-                <div class="metric-card">
-                    <div class="metric-value">3+</div>
-                    <div class="metric-label">Proyectos cerrados juntos</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">$300k+</div>
-                    <div class="metric-label">MXN facturados en conjunto</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">90%+</div>
-                    <div class="metric-label">Satisfaccion del cliente (NPS)</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">&lt;5 dias</div>
-                    <div class="metric-label">Tiempo de propuesta post-discovery</div>
-                </div>
-            </div>
-            <div class="grid-3" style="margin-top: 1rem;">
-                <div class="metric-card">
-                    <div class="metric-value">On-Time</div>
-                    <div class="metric-label">Entregas dentro del timeline</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">0</div>
-                    <div class="metric-label">Conflictos de roles/decision</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">Pass</div>
-                    <div class="metric-label">"Two-Week Vacation Test"</div>
+            <div class="decision-card">
+                <div class="decision-label">Decision 9.3</div>
+                <h4>Servicios que ofrecemos juntos</h4>
+                <div class="context">Que servicios puede ofrecer la firma unificada que ninguna de las dos podria sola?</div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d9_3_servicios" placeholder="Consultoria, automatizaciones, desarrollo de software, IA, marketing, educacion..." style="min-height:100px;"></textarea>
                 </div>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 10: FASE 2 - CONSOLIDACION -->
+        <!-- SECCION 10: PROTECCIONES Y SALIDA -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">10</div>
-                <h2>Fase 2: Consolidacion "NewCo" (Mes 4+)</h2>
+                <h2>Decision: Protecciones y Plan de Salida</h2>
             </div>
-            <p>Si el piloto funciona, se firma el acta de <strong>"The Tech Firm"</strong> y se juntan las operaciones en una sola empresa.</p>
+            <p>Que pasa si no funciona. Mejor definirlo cuando todo esta bien que cuando hay problemas.</p>
 
-            <div class="sub-title">Condiciones para Pasar a Fase 2</div>
-            <div class="callout callout-info">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
-                </div>
-                <div class="callout-content">
-                    <h4>Checklist para decidir si avanzamos</h4>
-                    <p>
-                        &#9744; Se cerraron al menos 3 proyectos juntos bien<br>
-                        &#9744; Se facturaron mas de $300k MXN en el trimestre<br>
-                        &#9744; No hubo broncas fuertes de roles o decisiones<br>
-                        &#9744; El proceso de venta &rarr; entrega funciono sin trabarse<br>
-                        &#9744; La operacion se sostuvo mientras Alejandro no estuvo (luna de miel)<br>
-                        &#9744; Los 4 socios estan de acuerdo en seguir<br>
-                        &#9744; Ya se definio cuanto se reinvierte y cuanto se guarda de emergencia
-                    </p>
+            <div class="decision-card">
+                <div class="decision-label">Decision 10.1</div>
+                <h4>Si el piloto no funciona</h4>
+                <div class="context">Que pasa si despues del periodo de prueba decidimos que no funciona?</div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d10_1_notas" placeholder="Ej: Cada empresa vuelve a operar independiente. Sin deuda entre las partes. El entrenamiento dado se queda como aprendizaje. IP de cada lado se regresa..."></textarea>
                 </div>
             </div>
 
-            <div class="grid-2" style="margin-top: 1.5rem;">
-                <div>
-                    <div class="sub-title">Cap Table (Equity)</div>
-                    <div class="grid-2">
-                        <div class="metric-card"><div class="metric-value">25%</div><div class="metric-label">Alejandro</div></div>
-                        <div class="metric-card"><div class="metric-value">25%</div><div class="metric-label">Marcelo</div></div>
-                        <div class="metric-card"><div class="metric-value">25%</div><div class="metric-label">Juan</div></div>
-                        <div class="metric-card"><div class="metric-value">25%</div><div class="metric-label">Christian</div></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="sub-title">Flujo de Dinero Unificado</div>
-                    <ul class="styled-list">
-                        <li>100% de proyectos nuevos entran a la nueva entidad</li>
-                        <li>Salarios base reales para los 4 socios</li>
-                        <li>Reinversion obligatoria: <input type="text" class="field-input" id="f_reinversion_inline" placeholder="%" style="display:inline; width:120px; padding:4px 8px; font-size:0.85rem;"> de utilidades trimestrales</li>
-                        <li>Profit sharing trimestral del remanente (25/25/25/25)</li>
-                        <li>Fondo de emergencia permanente</li>
-                    </ul>
+            <div class="decision-card">
+                <div class="decision-label">Decision 10.2</div>
+                <h4>Clausula de salida post-fusion</h4>
+                <div class="context">Si ya estamos fusionados y una de las dos partes quiere salirse, cual es el proceso?</div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d10_2_notas" placeholder="Tiempo de aviso, como se valua, derecho de primera oferta, non-compete, transicion de clientes..." style="min-height:100px;"></textarea>
                 </div>
             </div>
 
-            <div class="sub-title">Estructura Financiera de la NewCo</div>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Concepto</th><th>Detalle</th><th>Frecuencia</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Ingresos</strong></td><td>100% de facturacion de proyectos nuevos entra a The Tech Firm</td><td>Por proyecto</td></tr>
-                        <tr><td><strong>Costos de delivery</strong></td><td>Freelancers, herramientas, hosting, APIs &mdash; se pagan primero</td><td>Por proyecto</td></tr>
-                        <tr><td><strong>Salarios base</strong></td><td>Cada socio recibe salario fijo mensual: <input type="text" class="field-input" id="f_salario_tabla" placeholder="Monto por definir" style="display:inline; width:180px; padding:4px 8px; font-size:0.85rem; margin-top:4px;"></td><td>Mensual</td></tr>
-                        <tr><td><strong>Reinversion</strong></td><td><input type="text" class="field-input" id="f_reinversion_tabla" placeholder="X%" style="display:inline; width:80px; padding:4px 8px; font-size:0.85rem;"> de utilidades netas para crecimiento y fondo de emergencia</td><td>Trimestral</td></tr>
-                        <tr><td><strong>Profit sharing</strong></td><td>Remanente despues de costos + salarios + reinversion: 25/25/25/25</td><td>Trimestral</td></tr>
-                        <tr><td><strong>Fondo de emergencia</strong></td><td>Reserva para imprevistos. Minimo: <input type="text" class="field-input" id="f_fondo_tabla" placeholder="Por definir" style="display:inline; width:180px; padding:4px 8px; font-size:0.85rem; margin-top:4px;"></td><td>Continuo</td></tr>
-                    </tbody>
-                </table>
+            <div class="decision-card">
+                <div class="decision-label">Decision 10.3</div>
+                <h4>Non-compete</h4>
+                <div class="context">Los socios/empresas pueden tener proyectos por su cuenta mientras estan en la firma?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d10_3" value="exclusivo"> <span><strong>Exclusividad total:</strong> Todo pasa por la firma. No se atienden clientes por fuera</span></label>
+                    <label class="decision-option"><input type="radio" name="d10_3" value="con_excepciones"> <span><strong>Con excepciones:</strong> Los clientes que cada empresa ya tiene se respetan. Solo los nuevos pasan por la firma</span></label>
+                    <label class="decision-option"><input type="radio" name="d10_3" value="libre"> <span><strong>Libre:</strong> Cada empresa puede seguir operando por su cuenta, solo los proyectos conjuntos se comparten</span></label>
+                </div>
+                <div class="field-group">
+                    <textarea class="field-textarea" id="d10_3_notas" placeholder="Condiciones, excepciones, duracion del non-compete despues de una salida..."></textarea>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 10.4</div>
+                <h4>Propiedad intelectual</h4>
+                <div class="context">El codigo, templates y frameworks que se crean en la firma: de quien son?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d10_4" value="firma"> <span><strong>De la firma:</strong> Todo lo creado en conjunto pertenece a la nueva entidad</span></label>
+                    <label class="decision-option"><input type="radio" name="d10_4" value="quien_crea"> <span><strong>De quien lo crea:</strong> Cada empresa retiene la IP de lo que desarrolla</span></label>
+                    <label class="decision-option"><input type="radio" name="d10_4" value="licencia"> <span><strong>Licencia cruzada:</strong> Cada empresa retiene su IP pero la otra puede usarla</span></label>
+                </div>
+                <div class="field-group">
+                    <label>IP que cada empresa trae a la mesa (pre-fusion)</label>
+                    <textarea class="field-textarea" id="d10_4_ip" placeholder="Que IP trae Enthropy? Que IP trae Cowire? Como se maneja?"></textarea>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-label">Decision 10.5</div>
+                <h4>NDA entre las partes</h4>
+                <div class="context">Se firma NDA desde el dia 1 para proteger la informacion de ambos lados?</div>
+                <div class="decision-options">
+                    <label class="decision-option"><input type="radio" name="d10_5" value="si"> <span><strong>Si:</strong> NDA mutuo antes de compartir informacion sensible</span></label>
+                    <label class="decision-option"><input type="radio" name="d10_5" value="no"> <span><strong>No:</strong> Confianza desde el inicio, se formaliza cuando se firme la fusion</span></label>
+                </div>
             </div>
         </div>
 
         <!-- ============================================ -->
-        <!-- SECCION 11: PLAN DE ESCALAMIENTO -->
+        <!-- SECCION 11: SIGUIENTES PASOS -->
         <!-- ============================================ -->
         <div class="card">
             <div class="card-header">
                 <div class="step-number">11</div>
-                <h2>Plan de Escalamiento: De $500k a $5M MXN/mes</h2>
+                <h2>Siguientes Pasos</h2>
             </div>
+            <p>Una vez que las decisiones de arriba esten claras, estos son los pasos para arrancar.</p>
 
-            <div class="sub-title">Fase 2 Target: $500k MXN/mes</div>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Fuente de Ingreso</th><th>Unidades</th><th>Ticket Promedio</th><th>Revenue Mensual</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Proyectos Enterprise</strong> (Consultoria + Implementacion)</td><td>2 proyectos/mes</td><td>$150k MXN</td><td>$300k MXN</td></tr>
-                        <tr><td><strong>Proyectos Medianos</strong> (Automatizaciones)</td><td>2 proyectos/mes</td><td>$50k MXN</td><td>$100k MXN</td></tr>
-                        <tr><td><strong>Retainers</strong> (Soporte + Mantenimiento)</td><td>4 clientes activos</td><td>$25k MXN</td><td>$100k MXN</td></tr>
-                        <tr style="font-weight: 700; background: rgba(99,102,241,0.06);"><td><strong>TOTAL</strong></td><td></td><td></td><td><strong>$500k MXN</strong></td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="sub-title">Vision a 3 Años: $5M MXN/mes</div>
-            <p>Para llegar ahi:</p>
-            <div class="grid-3" style="margin-top: 1rem;">
-                <div class="insight-box">
-                    <h4>Inbound Machine</h4>
-                    <p>Marcelo como cara de tech en LATAM. YouTube, LinkedIn, podcasts. Contenido data-driven con agentes que analizan competidores.</p>
-                </div>
-                <div class="insight-box">
-                    <h4>Outbound &amp; Partnerships</h4>
-                    <p>La red de Alejandro: enterprise, C-level, gobierno. Primero dominar Nuevo Leon, luego escalar.</p>
-                </div>
-                <div class="insight-box">
-                    <h4>IA como Multiplicador</h4>
-                    <p>Juan no hace todo solo &mdash; dirige y apalanca al equipo (Diego, dev freelance, Carolina) con Claude Code. 4-6 proyectos al mismo tiempo sin contratar mas. Si se necesitan 3+ freelancers por 3+ meses, ahi si se contrata.</p>
-                </div>
-            </div>
-
-            <div class="sub-title">Systemizacion del Conocimiento</div>
             <div class="callout callout-purple">
                 <div class="callout-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <div class="callout-content">
-                    <h4>El cuello de botella no son las manos, es la mente</h4>
-                    <p>No escalas metiendo mas gente. Escalas bajando el conocimiento a sistemas. Cuando algo sale mal, no es porque no se hizo, sino porque no se hizo <strong>como tu sabes que se tiene que hacer</strong>. Templates, CLAUDE.md files, SOPs, frameworks &mdash; que cualquiera ejecute al mismo nivel.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SECCION 12: PROYECTO DETALLADO 90 DIAS -->
-        <!-- ============================================ -->
-        <div class="card">
-            <div class="card-header">
-                <div class="step-number">12</div>
-                <h2>Proyecto Detallado: 90 Dias</h2>
-            </div>
-
-            <p>Plan semana por semana. Cada tarea tiene responsable, entregable y de que depende. El objetivo: para el mes 4 el equipo maneja 5-7 proyectos simultaneos y Alejandro solo vende.</p>
-
-            <!-- TIMELINE VISUAL -->
-            <div style="display:grid; grid-template-columns: repeat(12,1fr); gap:4px; margin:2rem 0 0.5rem; font-size:0.7rem; text-align:center; color:var(--text-muted);">
-                <div>S1</div><div>S2</div><div>S3</div><div>S4</div><div>S5</div><div>S6</div><div>S7</div><div>S8</div><div>S9</div><div>S10</div><div>S11</div><div>S12</div>
-            </div>
-            <div style="display:grid; grid-template-columns: repeat(12,1fr); gap:4px; margin-bottom:0.25rem;">
-                <div style="grid-column:1/3; background:linear-gradient(90deg,#6366f1,#818cf8); border-radius:6px; padding:6px 8px; color:white; font-size:0.7rem; font-weight:600; text-align:center;">Infraestructura</div>
-                <div style="grid-column:3/5; background:linear-gradient(90deg,#7c3aed,#a78bfa); border-radius:6px; padding:6px 8px; color:white; font-size:0.7rem; font-weight:600; text-align:center;">Entrenamiento</div>
-                <div style="grid-column:5/9; background:linear-gradient(90deg,#059669,#34d399); border-radius:6px; padding:6px 8px; color:white; font-size:0.7rem; font-weight:600; text-align:center;">Equipo 2x</div>
-                <div style="grid-column:9/13; background:linear-gradient(90deg,#d97706,#fbbf24); border-radius:6px; padding:6px 8px; color:#0c0c14; font-size:0.7rem; font-weight:600; text-align:center;">Autonomo + Vacation Test</div>
-            </div>
-            <div style="display:grid; grid-template-columns: repeat(12,1fr); gap:4px; margin-bottom:2rem;">
-                <div style="grid-column:1/5; background:rgba(248,113,113,0.15); border:1px solid rgba(248,113,113,0.3); border-radius:6px; padding:6px 8px; color:var(--danger); font-size:0.7rem; font-weight:600; text-align:center;">Mes 1</div>
-                <div style="grid-column:5/9; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25); border-radius:6px; padding:6px 8px; color:var(--accent-hover); font-size:0.7rem; font-weight:600; text-align:center;">Mes 2</div>
-                <div style="grid-column:9/13; background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.25); border-radius:6px; padding:6px 8px; color:var(--success); font-size:0.7rem; font-weight:600; text-align:center;">Mes 3</div>
-            </div>
-
-            <!-- ====== SEMANA 1 ====== -->
-            <div class="sub-title">Semana 1 &mdash; Setup y Diagnostico</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Poner la casa en orden. Herramientas listas, proyectos mapeados, comunicacion funcionando.</p>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th style="width:40%;">Tarea</th><th>Responsable</th><th>Entregable</th><th>Depende de</th></tr></thead>
-                    <tbody>
-                        <tr><td>Validar este documento con los 4 socios</td><td>Los 4</td><td>Documento aprobado</td><td>&mdash;</td></tr>
-                        <tr><td>Crear workspace de Slack con canales: #general, #ventas, #proyectos, #ops</td><td>Christian</td><td>Slack activo</td><td>&mdash;</td></tr>
-                        <tr><td>Crear workspace de Asana con templates por tipo de proyecto</td><td>Christian</td><td>Asana con estructura</td><td>&mdash;</td></tr>
-                        <tr><td>Configurar pipeline en ClickUp/GHL (stages: prospecto &rarr; discovery &rarr; propuesta &rarr; cerrado)</td><td>Christian + Alejandro</td><td>Pipeline funcional</td><td>&mdash;</td></tr>
-                        <tr><td>Mapear TODOS los proyectos activos de Cowire con Alejandro</td><td>Christian + Alejandro</td><td>Lista de proyectos con status, deadlines, responsable</td><td>&mdash;</td></tr>
-                        <tr><td>Meter proyectos activos de Cowire a Asana</td><td>Christian</td><td>Cada proyecto con board, tareas y deadlines</td><td>Mapeo listo</td></tr>
-                        <tr><td>Sesion con Diego y Andrea: que hacen, como, que los traba</td><td>Christian</td><td>Diagnostico del equipo</td><td>&mdash;</td></tr>
-                        <tr><td>Primer daily standup con Diego y Andrea (10 min, Slack o call)</td><td>Christian</td><td>Ritmo diario establecido</td><td>Slack activo</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- ====== SEMANA 2 ====== -->
-            <div class="sub-title">Semana 2 &mdash; Sistemas Internos + Pipeline</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Automatizaciones internas funcionando. Alejandro empieza a llenar el pipeline.</p>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th style="width:40%;">Tarea</th><th>Responsable</th><th>Entregable</th><th>Depende de</th></tr></thead>
-                    <tbody>
-                        <tr><td>Automatizar transcripcion de calls &rarr; resumen + tareas en Asana</td><td>Juan</td><td>Automatizacion activa</td><td>Asana listo</td></tr>
-                        <tr><td>CRM con follow-ups automaticos (GHL)</td><td>Juan + Christian</td><td>Secuencias de follow-up activas</td><td>Pipeline listo</td></tr>
-                        <tr><td>Template de propuesta comercial (scope, precio, timeline)</td><td>Christian + Alejandro</td><td>Template en Google Docs</td><td>&mdash;</td></tr>
-                        <tr><td>Template de contrato estandar</td><td>Christian</td><td>Contrato listo para usar</td><td>&mdash;</td></tr>
-                        <tr><td>Alejandro mete 2-3 prospectos al pipeline (incl. $150k en puerta)</td><td>Alejandro</td><td>Pipeline con prospectos reales</td><td>CRM listo</td></tr>
-                        <tr><td>Google Drive: estructura de carpetas (por proyecto, templates, admin)</td><td>Christian</td><td>Drive organizado</td><td>&mdash;</td></tr>
-                        <tr><td>Identificar 3-5 tareas que mas tiempo le comen a Diego y Andrea</td><td>Christian</td><td>Lista de tareas a optimizar</td><td>Diagnostico semana 1</td></tr>
-                        <tr><td>Regla: si algo lleva 2 dias sin moverse en Asana, se escala</td><td>Christian</td><td>Regla comunicada y activa</td><td>Asana listo</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- MILESTONE 1 -->
-            <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(167,139,250,0.08)); border:1px solid var(--border-accent); border-radius:var(--radius-md); padding:1.25rem; margin:1.5rem 0; display:flex; align-items:center; gap:1rem;">
-                <div style="background:linear-gradient(135deg,#6366f1,#a78bfa); width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                    <div style="color:var(--primary); font-weight:700; font-size:1rem;">Milestone 1: Infraestructura lista (fin semana 2)</div>
-                    <div style="color:var(--text-muted); font-size:0.85rem;">Slack, Asana, CRM, templates, pipeline con prospectos, equipo con standups diarios. Todo listo para ejecutar.</div>
+                    <h4>Orden sugerido</h4>
+                    <p>1. Revisar y discutir este documento juntos<br>
+                    2. Llenar las decisiones clave (equity, profit share, costos)<br>
+                    3. Firmar NDA si aplica<br>
+                    4. Arrancar el piloto con el primer proyecto conjunto<br>
+                    5. Evaluar al final del piloto si avanzamos a formalizar</p>
                 </div>
             </div>
 
-            <!-- ====== SEMANA 3 ====== -->
-            <div class="sub-title">Semana 3 &mdash; Entrenamiento IA + Primer Proyecto</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Juan entrena al equipo. Se arranca el primer proyecto piloto.</p>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th style="width:40%;">Tarea</th><th>Responsable</th><th>Entregable</th><th>Depende de</th></tr></thead>
-                    <tbody>
-                        <tr><td>Workshop Claude Code para Diego (sesion 1): setup, primeros prompts, tareas reales de sus proyectos</td><td>Juan</td><td>Diego usando Claude Code</td><td>&mdash;</td></tr>
-                        <tr><td>Workshop Claude Code para Carolina y dev freelance (sesion 1)</td><td>Juan</td><td>Carolina y dev freelance con setup</td><td>&mdash;</td></tr>
-                        <tr><td>Crear CLAUDE.md files para los 3 tipos de proyecto mas comunes de Cowire</td><td>Juan</td><td>3 CLAUDE.md files</td><td>Mapeo de proyectos</td></tr>
-                        <tr><td>SOPs en Asana: paso a paso de como se ejecuta cada tipo de proyecto</td><td>Christian + Juan</td><td>SOPs linkados en Asana</td><td>Templates Asana</td></tr>
-                        <tr><td>Andrea: training en como dar updates semanales a clientes</td><td>Christian</td><td>Andrea hace su primer update sola</td><td>&mdash;</td></tr>
-                        <tr><td>Discovery call del primer proyecto piloto</td><td>Alejandro + Juan</td><td>Brief del proyecto</td><td>Prospecto listo</td></tr>
-                        <tr><td>Propuesta + contrato del primer proyecto piloto</td><td>Juan (estimacion) + Christian (costeo) + Alejandro (pricing)</td><td>Propuesta enviada</td><td>Discovery call</td></tr>
-                        <tr><td>Onboarding de Carolina: SOPs, herramientas, primer proyecto asignado</td><td>Alejandro + Christian</td><td>Carolina con accesos y tareas</td><td>SOPs listos</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- ====== SEMANA 4 ====== -->
-            <div class="sub-title">Semana 4 &mdash; Ejecucion + Contenido</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Primer proyecto en ejecucion. Marcelo arranca contenido. Diego empieza a ejecutar con IA.</p>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th style="width:40%;">Tarea</th><th>Responsable</th><th>Entregable</th><th>Depende de</th></tr></thead>
-                    <tbody>
-                        <tr><td>Cierre y anticipo del primer proyecto piloto (50%)</td><td>Alejandro + Christian</td><td>Contrato firmado + anticipo cobrado</td><td>Propuesta aceptada</td></tr>
-                        <tr><td>Kickoff del primer proyecto: Asana board, timeline, accesos</td><td>Christian</td><td>Proyecto arrancado</td><td>Anticipo cobrado</td></tr>
-                        <tr><td>Juan ejecuta sprint 1 del proyecto piloto</td><td>Juan</td><td>Primera entrega parcial</td><td>Kickoff</td></tr>
-                        <tr><td>Workshop Claude Code sesion 2: Diego hace su primera tarea real con IA</td><td>Juan + Diego</td><td>Diego completa una integracion con Claude Code</td><td>Sesion 1</td></tr>
-                        <tr><td>Marcelo: calendario de contenido 30 dias (YouTube, LinkedIn, redes)</td><td>Marcelo</td><td>Calendario publicado</td><td>&mdash;</td></tr>
-                        <tr><td>Marcelo: primer video/post publicado</td><td>Marcelo</td><td>Contenido live</td><td>Calendario</td></tr>
-                        <tr><td>Andrea da primer reporte semanal a un cliente de Cowire sin Alejandro</td><td>Andrea + Christian</td><td>Update enviado</td><td>Training semana 3</td></tr>
-                        <tr><td>Landing page de The Tech Firm</td><td>Juan + Marcelo</td><td>Sitio web en vivo</td><td>&mdash;</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- MILESTONE 2 -->
-            <div style="background:linear-gradient(135deg, rgba(167,139,250,0.08), rgba(244,114,182,0.08)); border:1px solid rgba(167,139,250,0.25); border-radius:var(--radius-md); padding:1.25rem; margin:1.5rem 0; display:flex; align-items:center; gap:1rem;">
-                <div style="background:linear-gradient(135deg,#7c3aed,#a78bfa); width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                    <div style="color:var(--primary); font-weight:700; font-size:1rem;">Milestone 2: Equipo entrenado, primer proyecto en ejecucion (fin mes 1)</div>
-                    <div style="color:var(--text-muted); font-size:0.85rem;">Diego usa Claude Code. Andrea da updates a clientes. Carolina operando. Primer proyecto corriendo. Contenido arrancado. Landing page live.</div>
-                </div>
-            </div>
-
-            <!-- ====== SEMANA 5-6 ====== -->
-            <div class="sub-title">Semana 5-6 &mdash; Diego Autonomo + Proyectos en Paralelo</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Diego empieza a ejecutar integraciones sin Juan. Se arrancan proyectos nuevos en paralelo.</p>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th style="width:40%;">Tarea</th><th>Responsable</th><th>Entregable</th><th>Depende de</th></tr></thead>
-                    <tbody>
-                        <tr><td>Diego ejecuta integracion completa (GHL/Airtable/Softr) con Claude Code. Juan solo revisa al final.</td><td>Diego + Juan (review)</td><td>Integracion entregada</td><td>Training Claude Code</td></tr>
-                        <tr><td>Carolina maneja primer proyecto de automatizacion sencilla end-to-end</td><td>Carolina + Christian</td><td>Proyecto entregado sin socios</td><td>Onboarding Carolina</td></tr>
-                        <tr><td>Segundo proyecto nuevo: discovery + propuesta + cierre</td><td>Alejandro + Juan + Christian</td><td>2do proyecto arrancado</td><td>Pipeline</td></tr>
-                        <tr><td>Sprint 2-3 del primer proyecto piloto</td><td>Juan + Diego</td><td>Entregas parciales</td><td>Sprint 1</td></tr>
-                        <tr><td>Automatizar reportes semanales a clientes (template + IA llena, Andrea revisa)</td><td>Juan + Andrea</td><td>Reportes semi-automaticos</td><td>Andrea dando updates</td></tr>
-                        <tr><td>Alejandro prospecta 3+ deals nuevos (su red + leads de Marcelo)</td><td>Alejandro + Marcelo</td><td>5+ prospectos en pipeline</td><td>Contenido + red</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- ====== SEMANA 7-8 ====== -->
-            <div class="sub-title">Semana 7-8 &mdash; Capacidad 3x + Dashboard</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">3+ proyectos corriendo al mismo tiempo. Dashboard de clientes en desarrollo.</p>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th style="width:40%;">Tarea</th><th>Responsable</th><th>Entregable</th><th>Depende de</th></tr></thead>
-                    <tbody>
-                        <tr><td>Tercer proyecto nuevo arrancado</td><td>Alejandro + equipo</td><td>3 proyectos simultaneos</td><td>Capacidad del equipo</td></tr>
-                        <tr><td>Entrega del primer proyecto piloto + cobro del 50% restante</td><td>Christian + Juan</td><td>Proyecto entregado + cobrado</td><td>Sprints completos</td></tr>
-                        <tr><td>Retrospectiva del primer proyecto: que funciono, que no, ajustes</td><td>Los 4 socios</td><td>Documento de retro</td><td>Proyecto entregado</td></tr>
-                        <tr><td>Dashboard de clientes v1: reportes semanales + status de proyecto</td><td>Juan</td><td>Prototipo funcional</td><td>&mdash;</td></tr>
-                        <tr><td>Upsell al primer cliente: retainer o educacion</td><td>Alejandro</td><td>Propuesta enviada</td><td>Proyecto entregado</td></tr>
-                        <tr><td>Diego maneja 2 integraciones simultaneas</td><td>Diego + Juan (review)</td><td>Diego operando autonomo</td><td>Primera integracion exitosa</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- MILESTONE 3 -->
-            <div style="background:linear-gradient(135deg, rgba(52,211,153,0.08), rgba(110,231,183,0.08)); border:1px solid rgba(52,211,153,0.25); border-radius:var(--radius-md); padding:1.25rem; margin:1.5rem 0; display:flex; align-items:center; gap:1rem;">
-                <div style="background:linear-gradient(135deg,#059669,#34d399); width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                    <div style="color:var(--primary); font-weight:700; font-size:1rem;">Milestone 3: Equipo rindiendo 2-3x, primer proyecto entregado (fin mes 2)</div>
-                    <div style="color:var(--text-muted); font-size:0.85rem;">Diego autonomo en integraciones. Carolina despacha automatizaciones sola. 3 proyectos simultaneos. Primer proyecto cobrado. Dashboard en desarrollo.</div>
-                </div>
-            </div>
-
-            <!-- ====== SEMANA 9-10 ====== -->
-            <div class="sub-title">Semana 9-10 &mdash; Escalar + Preparar Vacation Test</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Capacidad para 4-5 proyectos. Se prepara todo para que Alejandro se vaya de luna de miel.</p>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th style="width:40%;">Tarea</th><th>Responsable</th><th>Entregable</th><th>Depende de</th></tr></thead>
-                    <tbody>
-                        <tr><td>4-5 proyectos corriendo simultaneos (distribuidos en equipo)</td><td>Equipo completo</td><td>Proyectos en ejecucion</td><td>Equipo entrenado</td></tr>
-                        <tr><td>Dashboard de clientes v2: tickets de soporte + notificaciones</td><td>Juan</td><td>Clientes usando el dashboard</td><td>v1 funcional</td></tr>
-                        <tr><td>Pipeline: 5+ prospectos activos en diferentes stages</td><td>Alejandro + Marcelo</td><td>CRM actualizado</td><td>Contenido + red</td></tr>
-                        <tr><td>Llenar pipeline antes de luna de miel: cerrar 1-2 deals mas</td><td>Alejandro</td><td>Deals cerrados</td><td>Pipeline</td></tr>
-                        <tr><td>Handoff de comunicacion: Andrea/Christian toman los clientes de Alejandro</td><td>Alejandro + Christian + Andrea</td><td>Clientes notificados, contactos transferidos</td><td>&mdash;</td></tr>
-                        <tr><td>Checklist vacation test: que tiene que pasar sin Alejandro</td><td>Christian</td><td>Checklist documentado</td><td>&mdash;</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- ====== SEMANA 11-12 ====== -->
-            <div class="sub-title">Semana 11-12 &mdash; Vacation Test + Evaluacion</div>
-            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Alejandro se va. El equipo sostiene todo. Al final se evalua si estamos listos para NewCo.</p>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th style="width:40%;">Tarea</th><th>Responsable</th><th>Entregable</th><th>Depende de</th></tr></thead>
-                    <tbody>
-                        <tr><td>Luna de miel de Alejandro &mdash; equipo opera sin el</td><td>Christian + Juan + Marcelo</td><td>Operacion sin caida</td><td>Handoff completo</td></tr>
-                        <tr><td>Christian maneja comunicacion con clientes enterprise</td><td>Christian + Andrea</td><td>Clientes atendidos, sin quejas</td><td>Handoff</td></tr>
-                        <tr><td>Juan + Diego + Carolina siguen ejecutando proyectos</td><td>Juan + Diego + Carolina</td><td>Entregas on-time</td><td>Proyectos activos</td></tr>
-                        <tr><td>Marcelo sigue generando contenido e inbound</td><td>Marcelo</td><td>Leads entrando</td><td>Calendario activo</td></tr>
-                        <tr><td>Alejandro regresa: revisar que paso, que funciono, que fallo</td><td>Los 4 socios</td><td>Reporte del vacation test</td><td>Alejandro regresa</td></tr>
-                        <tr><td>Retrospectiva completa del piloto de 90 dias</td><td>Los 4 socios</td><td>Documento con metricas y aprendizajes</td><td>Reporte vacation test</td></tr>
-                        <tr><td>Evaluacion Go/No-Go para NewCo</td><td>Los 4 socios</td><td>Decision de los 4</td><td>Retrospectiva</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- MILESTONE 4 -->
-            <div style="background:linear-gradient(135deg, rgba(251,191,36,0.08), rgba(252,211,77,0.08)); border:1px solid rgba(251,191,36,0.25); border-radius:var(--radius-md); padding:1.25rem; margin:1.5rem 0; display:flex; align-items:center; gap:1rem;">
-                <div style="background:linear-gradient(135deg,#d97706,#fbbf24); width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c0c14" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div>
-                    <div style="color:var(--primary); font-weight:700; font-size:1rem;">Milestone 4: Piloto completado, decision NewCo (fin mes 3)</div>
-                    <div style="color:var(--text-muted); font-size:0.85rem;">Vacation test pasado. 5+ proyectos manejados. Equipo 3-4x mas productivo. Dashboard live. Pipeline lleno. Decision: seguimos o no.</div>
-                </div>
-            </div>
-
-            <!-- METRICAS POR MES -->
-            <div class="sub-title">Metricas Esperadas por Mes</div>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Metrica</th><th>Mes 1</th><th>Mes 2</th><th>Mes 3</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Proyectos simultaneos</strong></td><td>1-2</td><td>3-4</td><td>5-7</td></tr>
-                        <tr><td><strong>Revenue nuevo (MXN)</strong></td><td>$300k-$500k</td><td>$500k-$700k</td><td>$700k-$1M</td></tr>
-                        <tr><td><strong>Personas ejecutando con IA</strong></td><td>1 (Juan)</td><td>3 (Juan, Diego, dev freelance)</td><td>4 (+ Carolina)</td></tr>
-                        <tr><td><strong>Prospectos en pipeline</strong></td><td>2-3</td><td>5+</td><td>8+</td></tr>
-                        <tr><td><strong>Tiempo de propuesta</strong></td><td>&lt;5 dias</td><td>&lt;3 dias</td><td>&lt;3 dias</td></tr>
-                        <tr><td><strong>Diego: integraciones solo</strong></td><td>0 (entrenando)</td><td>1-2</td><td>2-3</td></tr>
-                        <tr><td><strong>Carolina: proyectos sin socios</strong></td><td>0 (onboarding)</td><td>1</td><td>2-3</td></tr>
-                        <tr><td><strong>Contenido publicado</strong></td><td>2-4 piezas</td><td>8-12 piezas</td><td>12-16 piezas</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- RESPONSABILIDAD POR PERSONA -->
-            <div class="sub-title">Responsabilidad por Persona (90 dias)</div>
-            <div class="grid-2" style="margin-top:1rem;">
-                <div class="table-container">
-                    <table>
-                        <thead><tr><th colspan="2">Socios</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Alejandro</strong></td><td>Llenar pipeline, cerrar deals, hacer handoff de clientes a Andrea/Christian, ir a luna de miel</td></tr>
-                            <tr><td><strong>Marcelo</strong></td><td>Contenido (YouTube, LinkedIn, redes), generar inbound, calendario de 30 dias, posicionamiento de marca</td></tr>
-                            <tr><td><strong>Juan</strong></td><td>Entrenar equipo en Claude Code, CLAUDE.md files, ejecutar proyectos complejos, revisar trabajo del equipo, dashboard de clientes</td></tr>
-                            <tr><td><strong>Christian</strong></td><td>Asana, Slack, CRM, standups, SOPs, propuestas, contratos, coordinacion, cobranza, seguimiento de todo</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="table-container">
-                    <table>
-                        <thead><tr><th colspan="2">Equipo</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Diego</strong></td><td>Aprender Claude Code, ejecutar integraciones (GHL, Airtable, Softr), ser autonomo para mes 2</td></tr>
-                            <tr><td><strong>Andrea</strong></td><td>Comunicacion con clientes, reportes semanales, manejo de tickets, soporte operativo</td></tr>
-                            <tr><td><strong>Carolina</strong></td><td>Manejar proyectos mid-size de automatizacion end-to-end sin socios</td></tr>
-                            <tr><td><strong>dev freelance</strong></td><td>Desarrollo por proyecto con Claude Code, Juan define scope y revisa</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SECCION 13: RIESGOS -->
-        <!-- ============================================ -->
-        <div class="card">
-            <div class="card-header">
-                <div class="step-number">13</div>
-                <h2>Riesgos y Plan de Mitigacion</h2>
-            </div>
-
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Riesgo</th><th>Impacto</th><th>Mitigacion</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Conflicto de roles</strong></td><td><span class="badge badge-red">Alto</span></td><td>Regla de no-interferencia. Cruzados solo en junta</td></tr>
-                        <tr><td><strong>Desbalance de carga</strong></td><td><span class="badge badge-orange">Medio</span></td><td>Sync semanal. Christian veto si no hay capacidad</td></tr>
-                        <tr><td><strong>Cliente insatisfecho</strong></td><td><span class="badge badge-red">Alto</span></td><td>QA obligatorio. Updates semanales. Scope firmado</td></tr>
-                        <tr><td><strong>Dependencia de Juan</strong></td><td><span class="badge badge-orange">Medio</span></td><td>Juan dirige, no ejecuta todo. Equipo entrenado en IA + CLAUDE.md + dev freelance backup</td></tr>
-                        <tr><td><strong>Pipeline seco</strong></td><td><span class="badge badge-red">Alto</span></td><td>Doble canal: Inbound + Outbound</td></tr>
-                        <tr><td><strong>Scope creep</strong></td><td><span class="badge badge-orange">Medio</span></td><td>Scope firmado. Change requests aparte</td></tr>
-                        <tr><td><strong>Cobranza</strong></td><td><span class="badge badge-orange">Medio</span></td><td>50% anticipo obligatorio</td></tr>
-                        <tr><td><strong>Luna de miel</strong></td><td><span class="badge badge-orange">Medio</span></td><td>Pipeline lleno antes. Equipo cubre comunicacion</td></tr>
-                        <tr><td><strong>Tech obsoleta</strong></td><td><span class="badge badge-orange">Medio</span></td><td>Infraestructura > herramientas. Codigo > plataformas</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SECCION 14: PENDIENTES -->
-        <!-- ============================================ -->
-        <div class="card">
-            <div class="card-header">
-                <div class="step-number">14</div>
-                <h2>Pendientes por Definir (Junta de Socios)</h2>
-            </div>
-            <p>Estos puntos los tenemos que definir entre los 4 antes de avanzar. Llenen los campos y guarden los acuerdos.</p>
-
-            <!-- FINANCIEROS -->
-            <div class="field-section-title">Financieros</div>
-
-            <div class="field-row">
-                <div class="field-group">
-                    <label>Transfer Pricing (Fase 1)</label>
-                    <div class="field-hint">Cuanto se queda cada lado por tipo de proyecto (ej: 70/30, 65/35)</div>
-                    <input type="text" class="field-input" id="f_transfer_pricing" placeholder="Ej: Enthropy 70% / Cowire 30% en consultoria...">
-                </div>
-                <div class="field-group">
-                    <label>Salario base mensual por socio (Fase 2)</label>
-                    <div class="field-hint">Monto fijo mensual para cada socio</div>
-                    <input type="text" class="field-input" id="f_salario_base" placeholder="Ej: $25,000 MXN/mes por socio">
-                </div>
-            </div>
-
-            <div class="field-row">
-                <div class="field-group">
-                    <label>Porcentaje de reinversion trimestral</label>
-                    <div class="field-hint">Que % de utilidades se reinvierte cada trimestre</div>
-                    <input type="text" class="field-input" id="f_reinversion" placeholder="Ej: 15% de utilidades netas">
-                </div>
-                <div class="field-group">
-                    <label>Fondo de emergencia minimo</label>
-                    <div class="field-hint">Cuanto se guarda como colchon antes de repartir</div>
-                    <input type="text" class="field-input" id="f_fondo_emergencia" placeholder="Ej: 3 meses de costos fijos (~$200k MXN)">
-                </div>
-            </div>
-
-            <div class="field-row">
-                <div class="field-group">
-                    <label>Limite de gasto sin aprobacion</label>
-                    <div class="field-hint">Hasta cuanto puede gastar un socio sin preguntarle a los demas</div>
-                    <input type="text" class="field-input" id="f_limite_gasto" placeholder="Ej: $50,000 MXN">
-                </div>
-                <div class="field-group">
-                    <label>Meta de facturacion del primer trimestre</label>
-                    <div class="field-hint">Objetivo de revenue conjunto en los primeros 90 dias</div>
-                    <input type="text" class="field-input" id="f_meta_facturacion" placeholder="Ej: $300,000 MXN">
-                </div>
-            </div>
-
-            <!-- OPERATIVOS Y LEGALES -->
-            <div class="field-section-title">Operativos y Legales</div>
-
-            <div class="field-row">
-                <div class="field-group">
-                    <label>Nombre legal de la entidad</label>
-                    <div class="field-hint">The Tech Firm u otra variante</div>
-                    <input type="text" class="field-input" id="f_nombre_legal" placeholder="Ej: The Tech Firm S.A.P.I. de C.V.">
-                </div>
-                <div class="field-group">
-                    <label>Tipo de sociedad</label>
-                    <select class="field-select" id="f_tipo_sociedad">
-                        <option value="">Seleccionar...</option>
-                        <option value="sapi">SAPI de CV</option>
-                        <option value="sa">SA de CV</option>
-                        <option value="srl">SRL</option>
-                        <option value="sas">SAS</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                </div>
+            <div class="field-group" style="margin-top: 1.5rem;">
+                <label>Fecha tentativa de inicio del piloto</label>
+                <input type="text" class="field-input" id="d11_fecha" placeholder="Ej: 1 de abril 2026">
             </div>
 
             <div class="field-group">
-                <label>Clausula de salida</label>
-                <div class="field-hint">Que pasa si alguien se quiere salir? Condiciones, tiempos, proceso</div>
-                <textarea class="field-textarea" id="f_clausula_salida" placeholder="Ej: Notificacion 6 meses antes, ROFO a los socios, vesting proporcional..."></textarea>
+                <label>Primer proyecto conjunto propuesto</label>
+                <textarea class="field-textarea" id="d11_primer_proyecto" placeholder="Que proyecto podemos usar como piloto? Algo que ya este en pipeline?"></textarea>
             </div>
 
             <div class="field-group">
-                <label>Non-compete</label>
-                <div class="field-hint">Los socios pueden tener proyectos por su cuenta? Bajo que condiciones?</div>
-                <textarea class="field-textarea" id="f_non_compete" placeholder="Ej: No se permite otra agencia de tech. Side projects permitidos si no compiten y se declaran..."></textarea>
+                <label>Notas generales / Otros temas por discutir</label>
+                <textarea class="field-textarea" id="d11_notas_generales" placeholder="Cualquier otro punto que quieran dejar documentado..." style="min-height:120px;"></textarea>
             </div>
 
-            <div class="field-group">
-                <label>Resolucion de conflictos</label>
-                <div class="field-hint">Como se resuelven los desacuerdos que no se solucionan en junta</div>
-                <textarea class="field-textarea" id="f_conflictos" placeholder="Ej: Mediacion externa obligatoria antes de accion legal. Mediador pre-identificado..."></textarea>
-            </div>
-
-            <div class="field-row">
-                <div class="field-group">
-                    <label>Vesting del equity</label>
-                    <div class="field-hint">Se gana poco a poco o es directo?</div>
-                    <select class="field-select" id="f_vesting">
-                        <option value="">Seleccionar...</option>
-                        <option value="24_6">24 meses con cliff de 6 meses</option>
-                        <option value="36_6">36 meses con cliff de 6 meses</option>
-                        <option value="24_12">24 meses con cliff de 12 meses</option>
-                        <option value="directo">Equity directo (sin vesting)</option>
-                        <option value="otro">Otro esquema</option>
-                    </select>
-                </div>
-                <div class="field-group">
-                    <label>Oficina</label>
-                    <select class="field-select" id="f_oficina">
-                        <option value="">Seleccionar...</option>
-                        <option value="cowire">Usar la de Cowire</option>
-                        <option value="compartida">Compartir entre ambas</option>
-                        <option value="nueva">Buscar nueva oficina</option>
-                        <option value="remoto">100% remoto</option>
-                        <option value="hibrido">Hibrido (remoto + oficina)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="field-group">
-                <label>Roles de Diego y Andrea en la nueva estructura</label>
-                <div class="field-hint">Que funciones especificas van a cubrir en The Tech Firm</div>
-                <textarea class="field-textarea" id="f_roles_equipo" placeholder="Ej: Diego → delivery tecnico con IA. Andrea → soporte operativo y comunicacion con clientes..."></textarea>
-            </div>
-
-            <!-- ESTRATEGICOS -->
-            <div class="field-section-title">Estrategicos</div>
-
-            <div class="field-row">
-                <div class="field-group">
-                    <label>Cara de la marca</label>
-                    <div class="field-hint">Quien es la persona publica de The Tech Firm?</div>
-                    <input type="text" class="field-input" id="f_cara_marca" placeholder="Ej: Marcelo (propuesta inicial)">
-                </div>
-                <div class="field-group">
-                    <label>Proyectos de gobierno</label>
-                    <select class="field-select" id="f_gobierno">
-                        <option value="">Seleccionar...</option>
-                        <option value="activo">Les entramos activamente</option>
-                        <option value="oportunidad">Solo si llegan como oportunidad</option>
-                        <option value="fase2">Lo evaluamos en Fase 2</option>
-                        <option value="no">No por ahora</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="field-row">
-                <div class="field-group">
-                    <label>Division de educacion</label>
-                    <select class="field-select" id="f_educacion">
-                        <option value="">Seleccionar...</option>
-                        <option value="piloto">Arranca desde el piloto</option>
-                        <option value="fase2">Se espera a Fase 2</option>
-                        <option value="evaluar">Se evalua al final del piloto</option>
-                    </select>
-                </div>
-                <div class="field-group">
-                    <label>Rol de Marcelo en delivery</label>
-                    <select class="field-select" id="f_marcelo_delivery">
-                        <option value="">Seleccionar...</option>
-                        <option value="contenido">100% contenido y marketing</option>
-                        <option value="hibrido">Contenido + delivery parcial</option>
-                        <option value="evaluar">Se evalua segun carga</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="field-group">
-                <label>Clientes actuales de cada agencia en Fase 2</label>
-                <div class="field-hint">Que pasa con los clientes que ya tiene cada agencia si se fusionan</div>
-                <textarea class="field-textarea" id="f_clientes_actuales" placeholder="Ej: Todos migran a The Tech Firm / Se mantienen separados hasta que terminen / Revenue compartido desde dia 1..."></textarea>
-            </div>
-
-            <div class="field-group">
-                <label>Notas adicionales / Acuerdos extra</label>
-                <textarea class="field-textarea" id="f_notas_extra" placeholder="Cualquier otro punto que quieran dejar por escrito..."></textarea>
-            </div>
-
-            <button class="btn-save" onclick="guardarAcuerdos()">
+            <button class="btn-save" onclick="guardarTodo()">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-                Guardar acuerdos localmente
+                Guardar todo localmente
             </button>
-            <span class="save-status" id="saveStatus14">Guardado correctamente</span>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SECCION 15: GOVERNANCE Y TOMA DE DECISIONES -->
-        <!-- ============================================ -->
-        <div class="card">
-            <div class="card-header">
-                <div class="step-number">15</div>
-                <h2>Governance y Toma de Decisiones</h2>
-            </div>
-            <p>Con 4 socios al 25%, los empates 2v2 van a pasar. Necesitamos reglas claras de quien decide que, y como se resuelven los empates antes de que sucedan.</p>
-
-            <div class="sub-title">Niveles de Decision</div>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Tipo de Decision</th><th>Quien Decide</th><th>Ejemplos</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Operativa</strong> (dia a dia)</td><td>Lider de division &mdash; autonomia total</td><td>Asignar tareas, elegir herramienta, responder a cliente</td></tr>
-                        <tr><td><strong>Gastos &lt; $50k MXN</strong></td><td>Cualquier socio &mdash; notifica a los demas</td><td>Suscripcion, freelancer puntual, equipo</td></tr>
-                        <tr><td><strong>Gastos $50k&ndash;$200k MXN</strong></td><td>2 socios &mdash; aprobacion en 24h</td><td>Herramienta anual, contratacion temporal</td></tr>
-                        <tr><td><strong>Gastos &gt; $200k MXN</strong></td><td>3 de 4 socios &mdash; reunion formal</td><td>Empleado full-time, inversion grande</td></tr>
-                        <tr><td><strong>Contratacion</strong></td><td>Lider de division + 1 socio</td><td>Nuevo empleado o freelancer recurrente</td></tr>
-                        <tr><td><strong>Despido</strong></td><td>3 de 4 socios &mdash; con documentacion</td><td>Bajo rendimiento, conflicto grave</td></tr>
-                        <tr><td><strong>Nuevos servicios o divisiones</strong></td><td>Los 4 socios</td><td>Agregar educacion, entrar a gobierno</td></tr>
-                        <tr><td><strong>Cambio de equity o estructura</strong></td><td>Los 4 socios + asesor legal</td><td>Dilucion, agregar socio, cambio de % </td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="sub-title">Mecanismo de Desempate (2v2)</div>
-            <p>Cuando haya empate, seguimos este proceso:</p>
-            <div class="process-flow" style="margin-top:1rem;">
-                <div class="process-step">Discusion abierta</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-purple">Cooling off 72h</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-green">Cada lado presenta argumento (1 pag)</div>
-                <div class="process-arrow">&rarr;</div>
-                <div class="process-step step-warning">Re-voto</div>
-            </div>
-
-            <div class="callout callout-info" style="margin-top:1.5rem;">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                </div>
-                <div class="callout-content">
-                    <h4>Si sigue empatado despues del re-voto</h4>
-                    <p>El socio cuya area es mas relevante toma la decision final ("domain authority"). Los demas se comprometen a apoyarla aunque no esten de acuerdo. Si es un tema que cruza areas, se consulta a un advisor externo.</p>
-                </div>
-            </div>
-
-            <div class="sub-title">Reuniones Obligatorias</div>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Reunion</th><th>Frecuencia</th><th>Duracion</th><th>Agenda</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Junta de Socios</strong></td><td>Semanal</td><td>60 min</td><td>KPIs, pipeline, decisiones pendientes, blockers</td></tr>
-                        <tr><td><strong>Financiera</strong></td><td>Mensual</td><td>45 min</td><td>Revenue, costos, cash flow, proyecciones</td></tr>
-                        <tr><td><strong>Retrospectiva</strong></td><td>Mensual</td><td>60 min</td><td>Que funciono, que no, que cambiamos</td></tr>
-                        <tr><td><strong>Estrategica + OKRs</strong></td><td>Trimestral</td><td>3 hrs</td><td>Evaluar OKRs, definir nuevos, direccion del negocio</td></tr>
-                        <tr><td><strong>Revision de Socios</strong></td><td>Trimestral</td><td>90 min</td><td>Cada socio se autoevalua + los otros lo evaluan</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="callout callout-purple" style="margin-top:1.5rem;">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                <div class="callout-content">
-                    <h4>Regla de oro de las reuniones</h4>
-                    <p>Toda reunion tiene <strong>agenda previa (24h antes)</strong> y <strong>acta con action items, responsables y deadlines</strong>. Si no tiene agenda, no se hace. Si no tiene acta, no sirvio.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SECCION 16: ESCENARIOS DE RIESGO Y PLAN B -->
-        <!-- ============================================ -->
-        <div class="card">
-            <div class="card-header">
-                <div class="step-number">16</div>
-                <h2>Escenarios de Riesgo y Plan B</h2>
-            </div>
-            <p>El documento no puede asumir que todo sale bien. Estos son los escenarios que pueden pasar y como los manejamos.</p>
-
-            <div class="audit-item">
-                <h4><span class="badge badge-red">Critico</span> Un socio no rinde</h4>
-                <div class="finding">Resentimiento. Los otros 3 sienten que cargan al cuarto. Esto mata equipos mas rapido que cualquier problema financiero.</div>
-                <div class="recommendation"><strong>Prevencion:</strong> KPIs individuales por socio (seccion 19). Revision trimestral obligatoria. Si un socio no cumple metricas por 2 trimestres seguidos, se activa protocolo de mejora. Al tercer trimestre: clausula de dilucion o buyout forzado.</div>
-            </div>
-
-            <div class="audit-item">
-                <h4><span class="badge badge-red">Critico</span> El piloto falla</h4>
-                <div class="finding">Los 90 dias no funcionan: no se cierran proyectos, hay conflictos, o la operacion no se sostiene.</div>
-                <div class="recommendation"><strong>Plan B:</strong> Cada agencia vuelve a operar independiente. Sin deuda entre las partes. Lo invertido en entrenamiento e infraestructura se queda como aprendizaje. Los criterios de exito estan claros desde el dia 1 (seccion 9 KPIs).</div>
-            </div>
-
-            <div class="audit-item">
-                <h4><span class="badge badge-red">Critico</span> Un socio quiere salir</h4>
-                <div class="finding">Sin acuerdo claro, se convierte en desastre legal y emocional.</div>
-                <div class="recommendation"><strong>Protocolo:</strong> Notificacion 6 meses antes. Derecho de primera oferta a los socios. Vesting protege contra salidas tempranas. Non-compete 12-24 meses. Detalle en seccion 18.</div>
-            </div>
-
-            <div class="audit-item">
-                <h4><span class="badge badge-orange">Alto</span> Conflicto entre socios (2 de Enthropy vs 2 de Cowire)</h4>
-                <div class="finding">Las facciones naturales pueden crear un "nosotros vs ellos" que envenena la dinamica.</div>
-                <div class="recommendation"><strong>Prevencion:</strong> Desde el dia 1 no hay "los de Enthropy" y "los de Cowire". Son The Tech Firm. Roles claros con autonomia por division. Mecanismo de desempate definido (seccion 15). Juntas 1:1 entre socios cada 2 semanas.</div>
-            </div>
-
-            <div class="audit-item">
-                <h4><span class="badge badge-orange">Alto</span> Un cliente grande se va</h4>
-                <div class="finding">Si un cliente representa mas del 25% del revenue y se va, el golpe es fuerte.</div>
-                <div class="recommendation"><strong>Regla del 25%:</strong> Ningun cliente debe representar mas del 25% del ingreso total. Contratos con minimo 60 dias de aviso para cancelar. Minimo 2 socios tienen relacion con cada cliente importante. Fondo de emergencia de 3 meses de costos.</div>
-            </div>
-
-            <div class="audit-item">
-                <h4><span class="badge badge-orange">Alto</span> Diferencia de contribucion entre socios</h4>
-                <div class="finding">Uno trae mas revenue que los demas. El que mas trae siente que deberia ganar mas.</div>
-                <div class="recommendation"><strong>Estructura hibrida:</strong> Salario base igual + bonus por performance individual (5-10% del revenue que cada quien cierra) + profit sharing 25/25/25/25. Si la diferencia es brutal por 3+ trimestres, se renegocia abiertamente.</div>
-            </div>
-
-            <div class="audit-item">
-                <h4><span class="badge badge-blue">Medio</span> La tecnologia cambia drasticamente</h4>
-                <div class="finding">IA ya esta cambiando todo. Manana puede ser otra cosa.</div>
-                <div class="recommendation"><strong>Preparacion:</strong> 10-15% del revenue a I+D. Cada socio dedica 4-5 hrs/semana a aprender. Revision trimestral de nuevas tecnologias. Nuestro valor no es el stack, es resolver problemas de negocio con tecnologia.</div>
-            </div>
-
-            <div class="audit-item">
-                <h4><span class="badge badge-blue">Medio</span> Crecimiento acelerado sin procesos</h4>
-                <div class="finding">Crecen tan rapido que el caos los mata antes de poder disfrutarlo.</div>
-                <div class="recommendation"><strong>Prevencion:</strong> Procesos antes de crecer. No aceptar todos los proyectos (decir no a lo que no esta en nuestra zona). Contratar bien es mas importante que contratar rapido. Crecimiento sin direccion es cancer.</div>
-            </div>
-
-            <div class="callout callout-alert" style="margin-top:1.5rem;">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                </div>
-                <div class="callout-content">
-                    <h4>Si algo se pone feo entre socios</h4>
-                    <p>Primero se habla en privado. Si no se resuelve, junta de socios. Si sigue, mediador externo (tener uno identificado ANTES de necesitarlo). El costo de la mediacion lo paga la empresa. <strong>Clausula de mediacion obligatoria antes de cualquier accion legal.</strong></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SECCION 17: POLITICAS OPERATIVAS -->
-        <!-- ============================================ -->
-        <div class="card">
-            <div class="card-header">
-                <div class="step-number">17</div>
-                <h2>Politicas Operativas</h2>
-            </div>
-            <p>Reglas claras para que no haya ambiguedades en el dia a dia.</p>
-
-            <div class="grid-2" style="margin-top:1.5rem;">
-                <div>
-                    <div class="sub-title">Politicas de Desarrollo</div>
-                    <ul class="styled-list">
-                        <li><strong>Code review obligatorio</strong> antes de merge. Minimo 1 reviewer. Codigo critico (pagos, auth, datos): 2 reviewers.</li>
-                        <li><strong>Ambientes:</strong> Development &rarr; Staging &rarr; Production. Deploys a produccion solo en dias habiles, nunca viernes despues de las 2pm.</li>
-                        <li><strong>Testing minimo:</strong> Tests unitarios para logica de negocio, tests de integracion para APIs, smoke tests antes de cada deploy.</li>
-                        <li><strong>Documentacion:</strong> Cada proyecto tiene README con setup, arquitectura y decisiones tecnicas. CLAUDE.md files para cada tipo de proyecto.</li>
-                        <li><strong>Git:</strong> Branching strategy definida (trunk-based o Git flow). Commits descriptivos. PRs con descripcion.</li>
-                        <li><strong>Rollback plan</strong> para cada deploy a produccion.</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="sub-title">Politicas de Clientes</div>
-                    <ul class="styled-list">
-                        <li><strong>Todo cliente firma contrato.</strong> Sin excepciones. Ni el amigo, ni el conocido, ni el "es rapido".</li>
-                        <li><strong>50% anticipo obligatorio.</strong> No se arranca sin anticipo. Punto.</li>
-                        <li><strong>SLAs definidos</strong> por tipo de servicio: tiempo de respuesta, entregas, soporte.</li>
-                        <li><strong>Scope changes se cobran.</strong> Cualquier cambio de alcance se documenta por escrito. No hay "favor rapido".</li>
-                        <li><strong>Escalacion:</strong> Cliente insatisfecho &rarr; socio de operaciones. Tema serio &rarr; 2 socios. Nunca un solo socio maneja una crisis solo.</li>
-                        <li><strong>Cobranza:</strong> Si un cliente no paga a 30 dias, se pausa el trabajo. Sin excepciones.</li>
-                        <li><strong>Descuentos &gt; 10%</strong> necesitan aprobacion de al menos otro socio.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="grid-2" style="margin-top:1.5rem;">
-                <div>
-                    <div class="sub-title">Politicas Financieras</div>
-                    <ul class="styled-list">
-                        <li><strong>Una sola cuenta bancaria</strong> de la empresa. Ningun socio cobra clientes a su cuenta personal.</li>
-                        <li><strong>Salario base igual</strong> para los 4. Si al inicio no alcanza, todos ganan poco pero igual.</li>
-                        <li><strong>Distribucion trimestral:</strong> Revenue - gastos - impuestos - fondo de reserva = utilidades distribuibles (25/25/25/25).</li>
-                        <li><strong>Fondo de reserva:</strong> 15-20% de utilidades hasta tener 3-6 meses de colchon.</li>
-                        <li><strong>Reinversion:</strong> 10-20% del revenue para herramientas, capacitacion, marketing.</li>
-                        <li><strong>Contabilidad transparente:</strong> Todos los socios tienen acceso a estados financieros en todo momento.</li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="sub-title">Politicas Internas</div>
-                    <ul class="styled-list">
-                        <li><strong>Core hours:</strong> Todos disponibles 10am&ndash;2pm. Resto flexible.</li>
-                        <li><strong>Regla de las 4 horas:</strong> Mensajes entre socios se contestan en maximo 4h en horario laboral. Urgente = llamada.</li>
-                        <li><strong>Vacaciones:</strong> 15-20 dias/año por socio. Nunca 2 socios de vacaciones al mismo tiempo. Aviso 30 dias antes.</li>
-                        <li><strong>Fines de semana:</strong> Solo para emergencias de clientes en produccion.</li>
-                        <li><strong>Async por default:</strong> Si se puede resolver en un mensaje, se resuelve ahi. Calls para discusiones complejas o conflictos.</li>
-                        <li><strong>Side projects:</strong> Se permiten si: (1) no compiten con la firma, (2) no usan tiempo laboral, (3) se declaran a los socios.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SECCION 18: PROTECCIONES LEGALES -->
-        <!-- ============================================ -->
-        <div class="card">
-            <div class="card-header">
-                <div class="step-number">18</div>
-                <h2>Protecciones Legales</h2>
-            </div>
-            <p>Esto se tiene que firmar con abogado. No un template de internet &mdash; un documento hecho a la medida.</p>
-
-            <div class="grid-2" style="margin-top:1.5rem;">
-                <div>
-                    <div class="sub-title">Vesting Schedule</div>
-                    <div class="callout callout-alert">
-                        <div class="callout-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div class="callout-content">
-                            <h4>El 25% se gana, no se regala</h4>
-                            <p>Si alguien se va al mes 2, no se lleva el 25%. Vesting de <strong>24-36 meses</strong>. El equity se acumula proporcionalmente. Ejemplo con cliff de 6 meses: 0% los primeros 6 meses, despues se acumula mensualmente hasta llegar al 25% a los 24-36 meses.</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="sub-title">Non-Compete</div>
-                    <div class="callout callout-info">
-                        <div class="callout-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                        </div>
-                        <div class="callout-content">
-                            <h4>Mientras seas socio y despues</h4>
-                            <p><strong>Durante:</strong> No puedes tener otra agencia de tech, no trabajar como freelancer por fuera, no atender clientes por tu cuenta. Todo pasa por la firma. <strong>Post-salida:</strong> Non-compete de 12-24 meses. No contactar clientes, no reclutar empleados, no usar IP de la firma.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sub-title">Propiedad Intelectual (IP)</div>
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Que</th><th>De Quien Es</th><th>Si un Socio Sale</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Codigo, templates, frameworks creados en la firma</strong></td><td>De The Tech Firm</td><td>No se lleva nada</td></tr>
-                        <tr><td><strong>IP pre-fusion</strong> (frameworks de Enthropy, templates de Cowire)</td><td><input type="text" class="field-input" id="f_ip_prefusion" placeholder="Se licencia o transfiere? Definir..." style="display:inline; width:100%; padding:4px 8px; font-size:0.85rem; margin-top:4px;"></td><td>Depende del acuerdo de transferencia</td></tr>
-                        <tr><td><strong>Codigo de clientes</strong></td><td>Del cliente (a menos que el contrato diga otra cosa)</td><td>N/A</td></tr>
-                        <tr><td><strong>Patrones, aprendizajes, componentes genericos</strong></td><td>De The Tech Firm</td><td>No se lleva nada</td></tr>
-                        <tr><td><strong>Metodologias y SOPs</strong></td><td>De The Tech Firm</td><td>No se lleva nada</td></tr>
-                        <tr><td><strong>Lista de clientes y contactos</strong></td><td>De The Tech Firm</td><td>No se lleva nada</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="sub-title">Protocolo de Salida de un Socio</div>
-            <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem;">
-                <div style="display:flex; align-items:center; gap:1rem;">
-                    <div style="background:linear-gradient(135deg,#6366f1,#818cf8); min-width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:0.9rem;">1</div>
-                    <div><strong>Notificacion por escrito</strong> &mdash; Minimo 6 meses de anticipacion</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:1rem;">
-                    <div style="background:linear-gradient(135deg,#7c3aed,#a78bfa); min-width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:0.9rem;">2</div>
-                    <div><strong>Valuacion de la empresa</strong> &mdash; Formula pre-acordada (ej: 2x utilidades promedio de ultimos 12 meses) o valuacion por tercero independiente</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:1rem;">
-                    <div style="background:linear-gradient(135deg,#059669,#34d399); min-width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:0.9rem;">3</div>
-                    <div><strong>Derecho de primera oferta (ROFO)</strong> &mdash; Los socios restantes pueden comprar el 25% al precio valuado</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:1rem;">
-                    <div style="background:linear-gradient(135deg,#d97706,#fbbf24); min-width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#0c0c14; font-weight:800; font-size:0.9rem;">4</div>
-                    <div><strong>Derecho de veto</strong> &mdash; Si no compran, el socio puede buscar comprador externo pero los restantes aprueban quien entra</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:1rem;">
-                    <div style="background:linear-gradient(135deg,#f472b6,#fb7185); min-width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:0.9rem;">5</div>
-                    <div><strong>Transicion de 90 dias</strong> &mdash; Transferir clientes, conocimiento, accesos, documentacion. Pago a plazos si la firma no tiene cash (12-24 meses)</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:1rem;">
-                    <div style="background:linear-gradient(135deg,#6366f1,#a78bfa); min-width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:0.9rem;">6</div>
-                    <div><strong>Firma de salida</strong> &mdash; Non-compete, confidencialidad, plan de pagos, liberacion mutua de responsabilidades</div>
-                </div>
-            </div>
-
-            <div class="sub-title">NDA entre Socios</div>
-            <p>Todos firman NDA desde el dia 1. Acceso a clientes, precios, estrategias y operaciones del otro lado requiere proteccion formal. Si el piloto no funciona, nadie puede usar la informacion del otro.</p>
-
-            <div class="sub-title">Clausula de Deadlock</div>
-            <p>Si hay un conflicto que no se resuelve con el mecanismo de desempate (seccion 15), se activa mediacion externa obligatoria antes de cualquier accion legal. El costo lo paga la empresa.</p>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SECCION 19: KPIs POR SOCIO -->
-        <!-- ============================================ -->
-        <div class="card">
-            <div class="card-header">
-                <div class="step-number">19</div>
-                <h2>KPIs por Socio</h2>
-            </div>
-            <p>Cada socio tiene metricas claras. Se revisan trimestralmente. Si no se cumplen por 2 trimestres seguidos, se activa el protocolo de mejora.</p>
-
-            <div class="table-container">
-                <table>
-                    <thead><tr><th>Socio</th><th>Rol</th><th>Metricas Clave</th><th>Meta Trimestral</th></tr></thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Alejandro</strong></td>
-                            <td>CEO / Ventas</td>
-                            <td>Revenue cerrado, pipeline activo, tasa de cierre, retencion de clientes</td>
-                            <td>$500k+ MXN en deals cerrados, 8+ prospectos en pipeline, 30%+ tasa de cierre</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Marcelo</strong></td>
-                            <td>CMO</td>
-                            <td>Leads generados por contenido, piezas publicadas, engagement, leads calificados a pipeline</td>
-                            <td>20+ piezas de contenido, 10+ leads inbound, 3+ leads calificados al pipeline</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Juan</strong></td>
-                            <td>CTO</td>
-                            <td>Proyectos entregados a tiempo, calidad (bugs en produccion), equipo entrenado, velocidad de entrega</td>
-                            <td>90%+ entregas on-time, &lt;2 bugs criticos post-entrega, equipo ejecutando 3x</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Christian</strong></td>
-                            <td>COO</td>
-                            <td>Margen por proyecto, cobros a tiempo, proyectos entregados, NPS de clientes</td>
-                            <td>60%+ margen promedio, 95%+ cobros a tiempo, NPS 8+</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="sub-title">Proceso de Revision Trimestral</div>
-            <div class="grid-4" style="margin-top:1rem;">
-                <div class="metric-card">
-                    <div class="metric-value" style="font-size:1.5rem;">1</div>
-                    <div class="metric-label">Cada socio se autoevalua</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" style="font-size:1.5rem;">2</div>
-                    <div class="metric-label">Los otros 3 lo evaluan (anonimo)</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" style="font-size:1.5rem;">3</div>
-                    <div class="metric-label">Se comparan y discuten abiertamente</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value" style="font-size:1.5rem;">4</div>
-                    <div class="metric-label">Se ajustan responsabilidades si hace falta</div>
-                </div>
-            </div>
-
-            <div class="callout callout-success" style="margin-top:1.5rem;">
-                <div class="callout-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                </div>
-                <div class="callout-content">
-                    <h4>Accountability sin micromanagement</h4>
-                    <p>No medimos horas &mdash; medimos resultados. Dashboard compartido con numeros clave en tiempo real. Cuando los numeros estan visibles, la accountability es natural. Check-ins 1:1 entre pares de socios cada 2 semanas para ayudarse, no para reportar.</p>
-                </div>
-            </div>
+            <span class="save-status" id="saveStatus">Guardado correctamente</span>
         </div>
 
     </div>
 
     <script>
-        // IDs de todos los campos
-        const fieldIds = [
-            'f_transfer_pricing', 'f_salario_base', 'f_reinversion', 'f_fondo_emergencia',
-            'f_limite_gasto', 'f_meta_facturacion', 'f_nombre_legal', 'f_tipo_sociedad',
-            'f_clausula_salida', 'f_non_compete', 'f_conflictos', 'f_vesting', 'f_oficina',
-            'f_roles_equipo', 'f_cara_marca', 'f_gobierno', 'f_educacion', 'f_marcelo_delivery',
-            'f_clientes_actuales', 'f_notas_extra',
-            'f_reinversion_inline', 'f_salario_tabla', 'f_reinversion_tabla', 'f_fondo_tabla',
-            'f_ip_prefusion'
-        ];
+        function getAllFields() {
+            const data = {};
+            // Text inputs and textareas
+            document.querySelectorAll('.field-input, .field-textarea').forEach(function(el) {
+                if (el.id) data[el.id] = el.value;
+            });
+            // Radio buttons
+            document.querySelectorAll('input[type="radio"]:checked').forEach(function(el) {
+                data['radio_' + el.name] = el.value;
+            });
+            return data;
+        }
 
-        // Cargar datos guardados al abrir
-        window.addEventListener('DOMContentLoaded', function() {
-            const saved = JSON.parse(localStorage.getItem('ttf_acuerdos') || '{}');
-            fieldIds.forEach(function(id) {
-                const el = document.getElementById(id);
-                if (el && saved[id]) {
-                    el.value = saved[id];
+        function loadAllFields(data) {
+            if (!data) return;
+            Object.keys(data).forEach(function(key) {
+                if (key.startsWith('radio_')) {
+                    const name = key.replace('radio_', '');
+                    const radio = document.querySelector('input[name="' + name + '"][value="' + data[key] + '"]');
+                    if (radio) radio.checked = true;
+                } else {
+                    const el = document.getElementById(key);
+                    if (el) el.value = data[key];
                 }
             });
+        }
+
+        // Load on page open
+        window.addEventListener('DOMContentLoaded', function() {
+            const saved = JSON.parse(localStorage.getItem('ttf_decisiones') || 'null');
+            if (saved) loadAllFields(saved);
         });
 
-        // Guardar todos los campos
-        function guardarAcuerdos() {
-            const data = {};
-            fieldIds.forEach(function(id) {
-                const el = document.getElementById(id);
-                if (el) data[id] = el.value;
-            });
-            localStorage.setItem('ttf_acuerdos', JSON.stringify(data));
-            const status = document.getElementById('saveStatus14');
+        // Save function
+        function guardarTodo() {
+            localStorage.setItem('ttf_decisiones', JSON.stringify(getAllFields()));
+            const status = document.getElementById('saveStatus');
             status.classList.add('show');
             setTimeout(function() { status.classList.remove('show'); }, 2500);
         }
 
-        // Auto-guardar cada 30 segundos
+        // Auto-save every 30 seconds
         setInterval(function() {
-            const data = {};
-            let hasData = false;
-            fieldIds.forEach(function(id) {
-                const el = document.getElementById(id);
-                if (el) {
-                    data[id] = el.value;
-                    if (el.value) hasData = true;
-                }
-            });
-            if (hasData) localStorage.setItem('ttf_acuerdos', JSON.stringify(data));
+            const data = getAllFields();
+            const hasData = Object.values(data).some(function(v) { return v; });
+            if (hasData) localStorage.setItem('ttf_decisiones', JSON.stringify(data));
         }, 30000);
     </script>
 </body>
