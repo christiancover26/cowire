@@ -391,6 +391,168 @@
         }
         .save-status.show { opacity: 1; }
 
+        /* Partner Selector Bar */
+        .partner-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(12,12,20,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .partner-bar label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .partner-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.03);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .partner-btn:hover { border-color: var(--border-accent); background: rgba(99,102,241,0.06); }
+        .partner-btn.active {
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 2px 12px rgba(99,102,241,0.3);
+        }
+        .partner-bar .separator {
+            width: 1px;
+            height: 24px;
+            background: var(--border);
+            margin: 0 0.25rem;
+        }
+        .btn-compare {
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(52,211,153,0.3);
+            background: rgba(52,211,153,0.08);
+            color: var(--success);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-compare:hover { background: rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.5); }
+
+        /* Compare Modal */
+        .compare-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        .compare-overlay.show { display: block; }
+        .compare-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .compare-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .compare-header h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        .btn-close-compare {
+            padding: 0.5rem 1.25rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-close-compare:hover { border-color: var(--danger); color: var(--danger); }
+        .compare-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .compare-section h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .compare-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+        }
+        .compare-cell {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        .compare-cell .cell-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        .compare-cell.alejandro .cell-name { color: #818cf8; }
+        .compare-cell.marcelo .cell-name { color: #34d399; }
+        .compare-cell.juan .cell-name { color: #f472b6; }
+        .compare-cell.christian .cell-name { color: #fbbf24; }
+        .compare-cell .cell-value {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+        .compare-cell .cell-empty {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        .compare-match {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        .match-all { background: rgba(52,211,153,0.15); color: var(--success); }
+        .match-partial { background: rgba(251,191,36,0.15); color: var(--warning); }
+        .match-none { background: rgba(248,113,113,0.15); color: var(--danger); }
+        @media (max-width: 992px) {
+            .compare-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .compare-grid { grid-template-columns: 1fr; }
+            .partner-bar { gap: 0.5rem; }
+            .partner-btn { padding: 0.4rem 0.75rem; font-size: 0.8rem; }
+        }
+
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-body); }
@@ -413,6 +575,26 @@
     </style>
 </head>
 <body>
+
+    <div class="partner-bar" id="partnerBar">
+        <label>Respondiendo como:</label>
+        <button class="partner-btn" onclick="selectPartner('Alejandro')">Alejandro</button>
+        <button class="partner-btn" onclick="selectPartner('Marcelo')">Marcelo</button>
+        <button class="partner-btn" onclick="selectPartner('Juan')">Juan</button>
+        <button class="partner-btn" onclick="selectPartner('Christian')">Christian</button>
+        <div class="separator"></div>
+        <button class="btn-compare" onclick="openCompare()">Comparar respuestas</button>
+    </div>
+
+    <div class="compare-overlay" id="compareOverlay">
+        <div class="compare-container">
+            <div class="compare-header">
+                <h2>Comparacion de Respuestas</h2>
+                <button class="btn-close-compare" onclick="closeCompare()">Cerrar</button>
+            </div>
+            <div id="compareContent"></div>
+        </div>
+    </div>
 
     <header>
         <span class="badge-top">Confidencial &bull; Guia de Decisiones</span>
@@ -1410,9 +1592,9 @@
                 <textarea class="field-textarea" id="d11_notas_generales" placeholder="Cualquier otro punto que quieran dejar documentado..." style="min-height:120px;"></textarea>
             </div>
 
-            <button class="btn-save" onclick="guardarTodo()">
+            <button class="btn-save" onclick="guardarTodo()" id="btnGuardar" style="opacity:0.4; pointer-events:none;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-                Guardar todo localmente
+                <span id="btnGuardarText">Selecciona tu nombre arriba para guardar</span>
             </button>
             <span class="save-status" id="saveStatus">Guardado correctamente</span>
         </div>
@@ -1420,52 +1602,246 @@
     </div>
 
     <script>
+        const PARTNERS = ['Alejandro', 'Marcelo', 'Juan', 'Christian'];
+        let currentPartner = null;
+
+        // Field labels for comparison view
+        const FIELD_LABELS = {};
+        document.querySelectorAll('.field-group').forEach(function(group) {
+            var label = group.querySelector('label');
+            var input = group.querySelector('.field-input, .field-textarea');
+            if (label && input && input.id) {
+                FIELD_LABELS[input.id] = label.textContent.trim();
+            }
+        });
+        // Radio labels
+        document.querySelectorAll('.decision-card').forEach(function(card) {
+            var h4 = card.querySelector('h4');
+            var radios = card.querySelectorAll('input[type="radio"]');
+            if (h4 && radios.length > 0) {
+                var name = radios[0].name;
+                FIELD_LABELS['radio_' + name] = h4.textContent.trim();
+            }
+        });
+
+        function getStorageKey(partner) {
+            return 'ttf_resp_' + partner;
+        }
+
         function getAllFields() {
-            const data = {};
-            // Text inputs and textareas
+            var data = {};
             document.querySelectorAll('.field-input, .field-textarea').forEach(function(el) {
                 if (el.id) data[el.id] = el.value;
             });
-            // Radio buttons
             document.querySelectorAll('input[type="radio"]:checked').forEach(function(el) {
                 data['radio_' + el.name] = el.value;
             });
             return data;
         }
 
+        function clearAllFields() {
+            document.querySelectorAll('.field-input, .field-textarea').forEach(function(el) {
+                el.value = '';
+            });
+            document.querySelectorAll('input[type="radio"]:checked').forEach(function(el) {
+                el.checked = false;
+            });
+        }
+
         function loadAllFields(data) {
             if (!data) return;
             Object.keys(data).forEach(function(key) {
                 if (key.startsWith('radio_')) {
-                    const name = key.replace('radio_', '');
-                    const radio = document.querySelector('input[name="' + name + '"][value="' + data[key] + '"]');
+                    var name = key.replace('radio_', '');
+                    var radio = document.querySelector('input[name="' + name + '"][value="' + data[key] + '"]');
                     if (radio) radio.checked = true;
                 } else {
-                    const el = document.getElementById(key);
+                    var el = document.getElementById(key);
                     if (el) el.value = data[key];
                 }
             });
         }
 
-        // Load on page open
-        window.addEventListener('DOMContentLoaded', function() {
-            const saved = JSON.parse(localStorage.getItem('ttf_decisiones') || 'null');
-            if (saved) loadAllFields(saved);
-        });
+        function selectPartner(name) {
+            // Save current partner data before switching
+            if (currentPartner) {
+                var currentData = getAllFields();
+                var hasData = Object.values(currentData).some(function(v) { return v; });
+                if (hasData) {
+                    localStorage.setItem(getStorageKey(currentPartner), JSON.stringify(currentData));
+                }
+            }
 
-        // Save function
+            currentPartner = name;
+            localStorage.setItem('ttf_current_partner', name);
+
+            // Update UI
+            document.querySelectorAll('.partner-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+                if (btn.textContent.trim() === name) btn.classList.add('active');
+            });
+
+            // Enable save button
+            var btn = document.getElementById('btnGuardar');
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
+            document.getElementById('btnGuardarText').textContent = 'Guardar respuestas de ' + name;
+
+            // Clear and load this partner's data
+            clearAllFields();
+            var saved = JSON.parse(localStorage.getItem(getStorageKey(name)) || 'null');
+            if (saved) loadAllFields(saved);
+        }
+
         function guardarTodo() {
-            localStorage.setItem('ttf_decisiones', JSON.stringify(getAllFields()));
-            const status = document.getElementById('saveStatus');
+            if (!currentPartner) {
+                alert('Selecciona tu nombre arriba antes de guardar');
+                return;
+            }
+            localStorage.setItem(getStorageKey(currentPartner), JSON.stringify(getAllFields()));
+            var status = document.getElementById('saveStatus');
+            status.textContent = 'Guardado como ' + currentPartner;
             status.classList.add('show');
             setTimeout(function() { status.classList.remove('show'); }, 2500);
         }
 
+        function getRadioLabel(name, value) {
+            var radio = document.querySelector('input[name="' + name + '"][value="' + value + '"]');
+            if (radio) {
+                var label = radio.closest('.decision-option');
+                if (label) {
+                    var span = label.querySelector('span');
+                    if (span) {
+                        var strong = span.querySelector('strong');
+                        return strong ? strong.textContent : span.textContent.substring(0, 80);
+                    }
+                }
+            }
+            return value;
+        }
+
+        function openCompare() {
+            var allData = {};
+            var allKeys = new Set();
+            PARTNERS.forEach(function(p) {
+                var d = JSON.parse(localStorage.getItem(getStorageKey(p)) || '{}');
+                allData[p] = d;
+                Object.keys(d).forEach(function(k) { if (d[k]) allKeys.add(k); });
+            });
+
+            if (allKeys.size === 0) {
+                alert('No hay respuestas guardadas todavia');
+                return;
+            }
+
+            // Group by section
+            var sections = {};
+            var sectionOrder = [];
+            document.querySelectorAll('.decision-card').forEach(function(card) {
+                var labelEl = card.querySelector('.decision-label');
+                var h4 = card.querySelector('h4');
+                if (!labelEl || !h4) return;
+                var secName = labelEl.textContent.trim() + ': ' + h4.textContent.trim();
+                var keys = [];
+                card.querySelectorAll('.field-input, .field-textarea').forEach(function(el) {
+                    if (el.id && allKeys.has(el.id)) keys.push(el.id);
+                });
+                card.querySelectorAll('input[type="radio"]').forEach(function(el) {
+                    var rk = 'radio_' + el.name;
+                    if (allKeys.has(rk) && keys.indexOf(rk) === -1) keys.push(rk);
+                });
+                if (keys.length > 0) {
+                    sections[secName] = keys;
+                    if (sectionOrder.indexOf(secName) === -1) sectionOrder.push(secName);
+                }
+            });
+
+            var html = '';
+            // Summary: who has responded
+            html += '<div class="compare-section"><h3>Estado de respuestas</h3><div class="compare-grid">';
+            PARTNERS.forEach(function(p) {
+                var count = Object.values(allData[p]).filter(function(v) { return v; }).length;
+                var cls = p.toLowerCase();
+                html += '<div class="compare-cell ' + cls + '">';
+                html += '<div class="cell-name">' + p + '</div>';
+                html += '<div class="cell-value">' + (count > 0 ? count + ' respuestas guardadas' : '<span class="cell-empty">Sin respuestas</span>') + '</div>';
+                html += '</div>';
+            });
+            html += '</div></div>';
+
+            sectionOrder.forEach(function(secName) {
+                var keys = sections[secName];
+                html += '<div class="compare-section"><h3>' + secName + '</h3>';
+                keys.forEach(function(key) {
+                    var fieldLabel = FIELD_LABELS[key] || key;
+                    var isRadio = key.startsWith('radio_');
+                    var values = PARTNERS.map(function(p) { return allData[p][key] || ''; });
+                    var filled = values.filter(function(v) { return v; });
+
+                    // Match indicator
+                    var matchHtml = '';
+                    if (filled.length >= 2) {
+                        var allSame = filled.every(function(v) { return v === filled[0]; });
+                        if (allSame) {
+                            matchHtml = '<span class="compare-match match-all">Todos de acuerdo</span>';
+                        } else {
+                            matchHtml = '<span class="compare-match match-none">Diferencias</span>';
+                        }
+                    }
+
+                    html += '<p style="font-size:0.85rem; font-weight:600; color:var(--primary-light); margin:1rem 0 0.5rem;">' + fieldLabel + matchHtml + '</p>';
+                    html += '<div class="compare-grid">';
+                    PARTNERS.forEach(function(p, i) {
+                        var cls = p.toLowerCase();
+                        var val = values[i];
+                        var display = '';
+                        if (!val) {
+                            display = '<span class="cell-empty">No respondio</span>';
+                        } else if (isRadio) {
+                            var radioName = key.replace('radio_', '');
+                            display = getRadioLabel(radioName, val);
+                        } else {
+                            display = val.replace(/</g, '&lt;').replace(/\n/g, '<br>');
+                        }
+                        html += '<div class="compare-cell ' + cls + '">';
+                        html += '<div class="cell-name">' + p + '</div>';
+                        html += '<div class="cell-value">' + display + '</div>';
+                        html += '</div>';
+                    });
+                    html += '</div>';
+                });
+                html += '</div>';
+            });
+
+            document.getElementById('compareContent').innerHTML = html;
+            document.getElementById('compareOverlay').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCompare() {
+            document.getElementById('compareOverlay').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeCompare();
+        });
+
+        // Load last partner on page open
+        window.addEventListener('DOMContentLoaded', function() {
+            var last = localStorage.getItem('ttf_current_partner');
+            if (last && PARTNERS.indexOf(last) !== -1) {
+                selectPartner(last);
+            }
+        });
+
         // Auto-save every 30 seconds
         setInterval(function() {
-            const data = getAllFields();
-            const hasData = Object.values(data).some(function(v) { return v; });
-            if (hasData) localStorage.setItem('ttf_decisiones', JSON.stringify(data));
+            if (!currentPartner) return;
+            var data = getAllFields();
+            var hasData = Object.values(data).some(function(v) { return v; });
+            if (hasData) localStorage.setItem(getStorageKey(currentPartner), JSON.stringify(data));
         }, 30000);
     </script>
 </body>
